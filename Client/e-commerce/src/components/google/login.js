@@ -6,7 +6,7 @@ import { verifyToken } from '../../axios/loginService';
 import { FcGoogle } from 'react-icons/fc';
 
 import { useDispatch } from 'react-redux';
-import{ initializeAccount } from '../../redux/reducers/account';
+import{ initializeAccount, logoutAccount } from '../../redux/reducers/account';
 
 const client_id = process.env.REACT_APP_CLIENT_ID;
 
@@ -14,22 +14,13 @@ const Login = () => {
     const dispatch = useDispatch();
 
     const onSuccess = async (res) => {
-        
-        let verification = await verifyToken(res.tokenId);
-        
-        const loggedUser = {
-            sub: verification.sub,
-            name: verification.name,
-            picture: verification.picture,
-            given_name: verification.given_name
-        }
-        localStorage.setItem('user', JSON.stringify(loggedUser));
-
-        await dispatch(initializeAccount(verification));
-
+        await verifyToken(res.tokenId);
+        await dispatch(initializeAccount());
     }
+
     const onFailure = (res) => {
-        localStorage.clear();
+        console.log('Login Failed');
+        dispatch(logoutAccount());
     }
 
     return(

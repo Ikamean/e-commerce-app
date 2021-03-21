@@ -14,4 +14,9 @@ const googleAuth = async (token) => {
 }
 googleAuth().catch(console.error);
 
-module.exports = googleAuth;
+
+const checkAud = (userAud) => {
+    return userAud === process.env.GOOGLE_CLIENT_ID
+}
+
+module.exports ={  googleAuth , checkAud } ;

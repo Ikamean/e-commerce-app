@@ -16,7 +16,6 @@ const Logout = () => {
     const dispatch = useDispatch();
     
     const onLogoutSuccess = (res) =>{
-        localStorage.clear();
         dispatch(logoutAccount());
     }
 
