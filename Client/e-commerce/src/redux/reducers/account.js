@@ -1,7 +1,8 @@
 import { getLoggedUser } from '../../axios/loginService';
 
 const initialState = {
-    "user" : null
+    "user" : null,
+    "userCard" : false
 }
 
 const accountReducer = (state=initialState, action) => {
@@ -12,6 +13,8 @@ const accountReducer = (state=initialState, action) => {
         case 'Logout' :
             state ={ user : null }
             return state
+        case 'Toggle_Card' :
+            return { ...state, userCard : !state.userCard }
         default : return state
     }
 }
@@ -31,6 +34,14 @@ export const logoutAccount = () => {
     return dispatch => {
         dispatch({
             type: 'Logout'
+        })
+    }
+}
+
+export const toggleUserCard = () => {
+    return dispatch => {
+        dispatch({
+            type: 'Toggle_Card'
         })
     }
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Cloudinary from '../../components/cloudinary/cloudinary';
+
 
 const HomePage = () => {
     return (
         <div>
-            <Cloudinary />
+            HomePage
         </div>
     )
 }

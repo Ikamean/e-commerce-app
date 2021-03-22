@@ -3,8 +3,8 @@ import { ThemeProvider } from "styled-components";
 
 const theme = {
     colors: {
-        black: '000',
-        white: 'fff',
+        black: '#000',
+        white: '#fff',
         blue: '#4285f4'
     },
     google: {

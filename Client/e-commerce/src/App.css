@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 html,
 body,
@@ -108,7 +108,7 @@ body {
   height: 100vh;
   line-height: 1.46668;
   font-weight: 400;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #fff;
 }
 ol,

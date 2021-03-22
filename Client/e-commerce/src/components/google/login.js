@@ -28,7 +28,7 @@ const Login = () => {
                         clientId={client_id}
                         render={renderProps => (
                             <GoogleBtn onClick={renderProps.onClick} disabled={renderProps.disabled}>
-                                <FcGoogle /> Login
+                                <FcGoogle /> Login with Google
                             </GoogleBtn>
                         )}
                         buttonText="Login"

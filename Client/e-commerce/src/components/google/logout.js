@@ -2,7 +2,7 @@ import React from 'react';
 
 import { GoogleLogout } from 'react-google-login';
 import { FcGoogle } from 'react-icons/fc';
-import{ GoogleBtn } from './login';
+import{ Details } from '../navbar/Profile/profileCard/accountDetails';
 
 import { useDispatch } from 'react-redux';
 import { logoutAccount } from '../../redux/reducers/account';
@@ -24,9 +24,9 @@ const Logout = () => {
                 <GoogleLogout
                     clientId={client_id}
                     render={renderProps => (
-                        <GoogleBtn onClick={renderProps.onClick} disabled={renderProps.disabled}>
-                            <FcGoogle /> Logout
-                        </GoogleBtn>
+                        <Details onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                            Logout
+                        </Details>
                     )}
                     onLogoutSuccess={()=>onLogoutSuccess()}
                     />

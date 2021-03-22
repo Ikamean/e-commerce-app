@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 
 const accountSchema = new mongoose.Schema({
     name: String,
+    givenName: String,
     picture: String,
     email: String,
     subID: String,
