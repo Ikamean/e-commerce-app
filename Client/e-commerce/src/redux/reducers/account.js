@@ -20,7 +20,7 @@ const accountReducer = (state=initialState, action) => {
 }
 
 
-export const initializeAccount = (value) => {
+export const initializeAccount = () => {
     return async dispatch => {
         let user = await getLoggedUser();
         await dispatch({

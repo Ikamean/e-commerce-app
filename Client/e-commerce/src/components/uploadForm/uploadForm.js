@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import { useDispatch } from 'react-redux';
+import { initializeAccount } from '../../redux/reducers/account';
+
 import CategoryField from './categoryField';
 import PriceField from './priceField';
 import SelectImgField from './selectImgField';
 import DetailsField from './detailsField';
+import FacebookField from './facebookField';
+import NumberField from './numberField';
 import Submit from './submit';
 
 import Preview from './Preview/preview';
@@ -15,6 +20,8 @@ import { upload } from '../../axios/uploadService';
 
 
 const UploadForm = () => {
+    const dispatch = useDispatch();
+
     const [ inputChange, setInputChange ] = useState('');
     const [ previewSource, setPreviewSource ] = useState([]);
 
@@ -22,6 +29,11 @@ const UploadForm = () => {
     const [ textAreaInput, setTextAreaInput ] = useState('');
     const [ category, setCategory ] = useState('');
     const [ price, setPrice ] = useState('');
+    const [ number, setNumber ] = useState('');
+    const [ facebook, setFacebook ] = useState('');
+
+    const [ uploadLoading, setUploadLoading ] = useState(false);
+    const [ uploadFiniShed, setUploadFiniShed ] = useState(false);
     
     const handleFileSelect = (e) => {
         const file = e.target.files[0];
@@ -34,45 +46,63 @@ const UploadForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(!previewSource) return;
+
+        if(previewSource.length === 0) return
 
         const userInput = {
             image: previewSource,
             details: textAreaInput,
             category: category,
-            price: price
+            price: price,
+            number: number,
+            facebook: facebook
         }
         
         uploadImage(userInput);
+        
+        setUploadLoading(true);
+        setUploadFiniShed(false);
 
         setPreviewSource([]);
         setTextAreaInput('');
         setCategory('');
         setPrice('');
+        setNumber('');
+        setFacebook('');
     }
 
     const uploadImage = async (userInput) => {
         let res = await upload(userInput);
+        if(res){
+            setUploadLoading(false);
+            setUploadFiniShed(true);
+            await dispatch(initializeAccount());
+        }
         console.log(res);
     }
 
     return (
         <UploadFormContainer>
+
         <Form onSubmit={(e)=>handleSubmit(e)}>
 
-            <SelectImgField handleFileSelect={handleFileSelect} inputChange={inputChange} />
+            <SelectImgField image={previewSource} handleFileSelect={handleFileSelect} inputChange={inputChange} />
 
             <CategoryField setCategory={setCategory} />
 
             <PriceField price={price} setPrice={setPrice} />
 
+            <FacebookField facebook={facebook} setFacebook={setFacebook} />
+
+            <NumberField number={number} setNumber={setNumber} />
+
             <DetailsField textAreaInput={textAreaInput} setTextAreaInput={setTextAreaInput} />
 
-            <Submit />
+            <Submit image={previewSource} />
 
         </Form>
 
-            <Preview source={previewSource} />
+            <Preview loading={uploadLoading} source={previewSource} setPreviewSource={setPreviewSource} />
 
         </UploadFormContainer>
     )
@@ -83,8 +113,16 @@ export default UploadForm
 const UploadFormContainer = styled.div`
     display: flex;
     flex-direction: column;
+    position: relative;
 
+    @media( min-width: 650px){
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
 `
+
+
 
 const Form = styled.form`
     display: flex;
@@ -97,6 +135,10 @@ const Form = styled.form`
     margin: 1rem 1rem;
     border: none;
     outline:none;
+
+    @media( min-width: 1024px ){
+        width: 600px;
+    }
 `
 export const HorizontalAlign = styled.div`
     display: flex;
@@ -112,7 +154,7 @@ export const Label = styled.label`
     font-size: 18px;
     line-height: 28px;
     letter-spacing: 0.085em;
-    background-color: ${ props => props.theme.colors.white };
+    background-color: ${ props => props.image ? props.theme.colors.blue :  props.theme.colors.white };
     margin-top: 10px;
     border: none;
     outline:none;
@@ -134,4 +176,11 @@ export const Label = styled.label`
         cursor: ${ props => (props.submit || props.upload) && 'pointer' };
     }
 
+`
+export const Input = styled.input`
+    border: none;
+    outline: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    padding: 10px;
 `

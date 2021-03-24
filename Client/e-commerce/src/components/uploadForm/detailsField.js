@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Label } from './uploadForm';
+import { Label, HorizontalAlign } from './uploadForm';
+
+import { IoTextSharp } from 'react-icons/io5';
 
 const DetailsField = ({textAreaInput, setTextAreaInput}) => {
     return (
-        <Label htmlFor='textArea'>Details
-                <TextArea placeholder='Provide Item details' value={textAreaInput} onChange={(e)=>setTextAreaInput(e.target.value)} id='textArea' required/>
+        <Label htmlFor='textArea'> <HorizontalAlign> <IoTextSharp/>  Details</HorizontalAlign>
+                <TextArea placeholder='Provide Item details' value={textAreaInput} 
+                onChange={(e)=>setTextAreaInput(e.target.value)} id='textArea'  required />
             </Label>
     )
 }
@@ -18,7 +21,7 @@ const TextArea = styled.textarea`
     border-radius: 4px;
     border: none;
     outline: none;
-    padding: 1rem 1.3rem;
+    padding: 1rem 1.1rem;
     max-width: 25ch;
     width: 25ch;
     min-width: 25ch;
@@ -28,5 +31,10 @@ const TextArea = styled.textarea`
     color: ${ props => props.theme.colors.black };
     line-height: 1rem;
     letter-spacing: 0.05em;
+    @media( min-width: 1024px ){
+        max-width: 65ch;
+        width: 65ch;
+        min-width: 65ch;
+    }
 
 `

@@ -7,8 +7,8 @@ import {  BsCloudUpload } from 'react-icons/bs';
 
 const Submit = () => {
     return (
-        <Label htmlFor='submit' submit='submit'> 
-                <Button id='submit' type='submit'>  <BsCloudUpload /> </Button>
+        <Label  htmlFor='submit' submit='submit'> 
+                <Button  id='submit' type='submit'>  <BsCloudUpload /> </Button>
         </Label>
     )
 }
@@ -25,8 +25,10 @@ const Button = styled.button`
     outline: none;
     background-color: transparent;
     font-size: 20px;
-    color: ${ props => props.theme.colors.blue };
+    color:  ${ props => props.theme.colors.blue };
     opacity: 1;
+
+
 
     &:hover{
         color: ${ props => props.theme.colors.white };

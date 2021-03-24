@@ -6,6 +6,9 @@ const uploadSchema = new mongoose.Schema({
     image: Array,
     authorName: String,
     authorEmail: String,
+    authorPicture: String,
+    authorFacebook: String,
+    authorNumber: String,
     creationDate: String
 })
 

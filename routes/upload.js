@@ -21,11 +21,12 @@ uploadRouter.post('/', async (req, res) => {
             const decoded = JWT.verify(token, process.env.JWT_SECRET)
             let loggedUser = await Account.findOne({ subId: decoded.sub })
 
-            // uploading images and getting secure Url back and pushing them to cloudinaryResponse Array
+            // uploading images and getting public Id back and pushing them to cloudinaryResponse Array
             const uploaderFunction = async  (element) => {
                 let res = await cloudinary.uploader.upload(element, { upload_preset : 'ExtremeShop', use_filename: true, unique_filename: false });
                 return res.public_id;
             }
+            
             for( i = 0; i < image.length; i ++){
                 let publicId = await uploaderFunction(image[i]);
                 cloudinaryResponse.push(publicId)
@@ -38,6 +39,9 @@ uploadRouter.post('/', async (req, res) => {
                 image: cloudinaryResponse,
                 authorName: loggedUser.name,
                 authorEmail: loggedUser.email,
+                authorPicture: loggedUser.picture,
+                authorFacebook: body.facebook,
+                authorNumber: body.number,
                 creationDate: Date()
             })
 
