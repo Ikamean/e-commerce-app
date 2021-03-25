@@ -22,6 +22,7 @@ import { upload } from '../../axios/uploadService';
 const UploadForm = () => {
     const dispatch = useDispatch();
 
+    // eslint-disable-next-line no-unused-vars
     const [ inputChange, setInputChange ] = useState('');
     const [ previewSource, setPreviewSource ] = useState([]);
 
@@ -33,6 +34,7 @@ const UploadForm = () => {
     const [ facebook, setFacebook ] = useState('');
 
     const [ uploadLoading, setUploadLoading ] = useState(false);
+    // eslint-disable-next-line no-unused-vars
     const [ uploadFiniShed, setUploadFiniShed ] = useState(false);
     
     const handleFileSelect = (e) => {
@@ -63,12 +65,7 @@ const UploadForm = () => {
         setUploadLoading(true);
         setUploadFiniShed(false);
 
-        setPreviewSource([]);
-        setTextAreaInput('');
-        setCategory('');
-        setPrice('');
-        setNumber('');
-        setFacebook('');
+        
     }
 
     const uploadImage = async (userInput) => {
@@ -76,9 +73,16 @@ const UploadForm = () => {
         if(res){
             setUploadLoading(false);
             setUploadFiniShed(true);
+
+            setPreviewSource([]);
+            setTextAreaInput('');
+            setCategory('');
+            setPrice('');
+            setNumber('');
+            setFacebook('');
+            
             await dispatch(initializeAccount());
         }
-        console.log(res);
     }
 
     return (
@@ -143,7 +147,9 @@ const Form = styled.form`
 export const HorizontalAlign = styled.div`
     display: flex;
     align-items: center;
-    gap: 10px;   
+    justify-content: center;
+    gap: 10px;
+    cursor: text;   
 `
 export const Label = styled.label`
     font-weight: 500;

@@ -1,7 +1,0 @@
-POST http://localhost:5000/api/login
-
-
-###
-DELETE  http://localhost:5000/api/upload/
-
-Content-Type: 'application/json'

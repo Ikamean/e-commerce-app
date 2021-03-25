@@ -4,6 +4,7 @@ const uploadSchema = new mongoose.Schema({
     category: String,
     details: String,
     image: Array,
+    price: String,
     authorName: String,
     authorEmail: String,
     authorPicture: String,

@@ -8,6 +8,7 @@ export const getAllImages = async () => {
 
 export const getOneImage = async (id) =>{
     let image = await axios.get(`api/images/${id}`);
-
     return image.data
 }
+
+

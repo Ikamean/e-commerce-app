@@ -28,20 +28,24 @@ loginRouter.post('/', async (req, res) => {
         creationDate: new Date()
     })
 
+    
+
     const payload = {
         subID: authorized.sub
     }
     const jwtToken = JWT.sign(payload, process.env.JWT_SECRET);
 
-    let findIfExists = await Account.find({ subID: authorized.sub })
+    let findIfExists = await Account.findOne({ subID: authorized.sub });
 
-    if (checkUserAud && findIfExists.length === 0) {
+
+    if (checkUserAud && !findIfExists) {
         await cloudAccount.save();
     }
 
     (checkUserAud && authorized) && addCookie(res, jwtToken);
 
-    res.status(200).end();
+
+    res.status(200).json(authorized);
 
 });
 
@@ -49,10 +53,13 @@ loginRouter.get('/', async (req, res) => {
 
     const token = req.cookies.access_token;
 
-    if(token){
-        const decoded = JWT.verify(token, process.env.JWT_SECRET)
 
-        let loggedUser = await Account.findOne({ subId: decoded.sub })
+    if(token){
+        const decoded = JWT.verify(token, process.env.JWT_SECRET);
+
+
+        let loggedUser = await Account.findOne({ subID: decoded.subID }).exec();
+
 
         res.status(200).json(loggedUser);
     }

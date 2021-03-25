@@ -11,7 +11,7 @@ const Name = ({name}) => {
 
 export default Name
 
-const UserName = styled.span`
+export const UserName = styled.span`
     font-style: normal;
     font-weight: 600;
     font-size: 17px;

@@ -16,7 +16,7 @@ export const upload = async (payload) => {
                 number: number,
                 facebook: facebook
                 },
-            headers: { 'Content-type' : 'application/json'}
+            headers: { 'Content-type' : 'application/json' }
         });
     } catch (error) {
         console.log(error.message);
@@ -25,4 +25,14 @@ export const upload = async (payload) => {
     return response.data
 }
 
-
+export const deleteProduct = async (id) => {
+    try {
+        let res = await axios( `api/upload/delete/${id}`,{
+            method: 'DELETE',
+            headers: { 'Content-type' : 'application/json' }
+        });
+        return res.data;
+    } catch (error) {
+        console.log(error.message);
+    }
+}

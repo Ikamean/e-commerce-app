@@ -14,8 +14,11 @@ const Login = () => {
     const dispatch = useDispatch();
 
     const onSuccess = async (res) => {
-        await verifyToken(res.tokenId);
-        await dispatch(initializeAccount());
+        let response = await verifyToken(res.tokenId);
+        if(response){
+            await dispatch(initializeAccount());
+        }
+        
     }
 
     const onFailure = (res) => {

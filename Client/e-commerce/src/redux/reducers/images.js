@@ -1,4 +1,5 @@
 import { getAllImages, getOneImage } from '../../axios/imagesService';
+import { DeleteAllUploads } from '../../axios/AdminDelete';
 
 const initialState = {
     "images" : [],
@@ -13,6 +14,8 @@ const imagesReducer = (state=initialState, action) => {
         case 'Initialize_Current_Image' :
             state = { ...state, currentImage : action.data }
             return state
+        case 'Admin_Cleanup' : 
+            return initialState
         default : return state
     }
 }
@@ -34,6 +37,15 @@ export const initCurrentImage = (id) => {
         await dispatch({
             type: 'Initialize_Current_Image',
             data: currentImage
+        })
+    }
+}
+
+export const adminCleanup = () => {
+    return async dispatch =>{
+        await DeleteAllUploads();
+        dispatch({
+            type: 'Admin_Cleanup'
         })
     }
 }

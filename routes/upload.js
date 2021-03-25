@@ -19,7 +19,7 @@ uploadRouter.post('/', async (req, res) => {
         if(token){
 
             const decoded = JWT.verify(token, process.env.JWT_SECRET)
-            let loggedUser = await Account.findOne({ subId: decoded.sub })
+            let loggedUser = await Account.findOne({ subID: decoded.subID })
 
             // uploading images and getting public Id back and pushing them to cloudinaryResponse Array
             const uploaderFunction = async  (element) => {
@@ -37,6 +37,7 @@ uploadRouter.post('/', async (req, res) => {
                 category: body.category,
                 details: body.details,
                 image: cloudinaryResponse,
+                price: body.price,
                 authorName: loggedUser.name,
                 authorEmail: loggedUser.email,
                 authorPicture: loggedUser.picture,
@@ -47,9 +48,10 @@ uploadRouter.post('/', async (req, res) => {
 
             let updatedUploads = loggedUser.uploads.concat(uploadedPost);
 
-            await Account.findOneAndUpdate({ subId: decoded.sub }, { uploads : updatedUploads });
+            await Account.findOneAndUpdate({ subID: decoded.subID }, { uploads : updatedUploads });
 
             await uploadedPost.save();
+            
             
 
             res.status(200).json({ uploaded : 'True', content : uploadedPost });
@@ -71,39 +73,46 @@ uploadRouter.delete('/deleteAll', async ( req, res) => {
     try {
         const token = req.cookies.access_token;
         const decoded = JWT.verify(token, process.env.JWT_SECRET)
-        if( decoded.sub === process.env.ADMIN_SUB){
+        
+        if( decoded.subID === process.env.ADMIN_SUB){
+            
             await Upload.deleteMany({});
+
+            await Account.updateMany({}, { $set: { uploads : [] } });
+
+            
             res.status(200).send('Deleted All uploaded content');
         }{
             res.status(400).send('Must Be logged in as administrator to delete all documents');
         }
         
     } catch (error) {
-        console.error(error);
+        console.error(error.message);
         res.status(500).send('ooppss, cant delete everything, something went wrong..')
     }
     
 })
 
-uploadRouter.delete('/:id', async ( req, res ) => {
+uploadRouter.delete('/delete/:id', async ( req, res ) => {
 
     try {
         const token = req.cookies.access_token;
         const decoded = JWT.verify(token, process.env.JWT_SECRET)
-        let loggedUser = await Account.findOne({ subId: decoded.sub })
+        let loggedUser = await Account.findOne({ subID: decoded.subID })
 
         const documentId = req.params.id;
-        await Upload.findByIdAndRemove({ _id: id });
+        await Upload.findByIdAndRemove({ _id: documentId });
 
-        let updateUserUploads = loggedUser.uploads.filter( document => document.id !== documentId );
+        let updateUserUploads = loggedUser.uploads.filter( document => JSON.stringify(document._id) !== JSON.stringify(documentId) );
 
-        await Account.findOneAndUpdate({ subId : decoded.sub }, { uploads: updateUserUploads });
+        await Account.findOneAndUpdate({ subID : decoded.subID }, { $set : { uploads: updateUserUploads }});
+
 
         res.status(200).json('Document Deleted successfully');
 
     } catch (error) {
         console.error(error);
-        res.status(404).send('Cant delete document, something went wrong');
+        res.status(500).send('Cant delete document, something went wrong');
     }
     
 })

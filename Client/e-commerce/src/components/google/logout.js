@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { GoogleLogout } from 'react-google-login';
-import { FcGoogle } from 'react-icons/fc';
 import{ Details } from '../navbar/Profile/profileCard/accountDetails';
 
 import { useDispatch } from 'react-redux';

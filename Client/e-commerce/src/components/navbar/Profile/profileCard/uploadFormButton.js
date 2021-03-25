@@ -18,7 +18,7 @@ const UploadFormButton = () => {
     }
 
     return (
-        <Details onClick={()=>handleSubmit()}>Upload</Details>
+        <Details onClick={()=>handleSubmit()}>New Upload</Details>
     )
 }
 

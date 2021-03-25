@@ -32,9 +32,9 @@ const AvatarContainer = styled.div`
     line-height: 28px;
     letter-spacing: 0.25em;
     color: ${ props => props.theme.colors.black};
-    opacity: 75%;
+    font-weight: 600;
     &:hover{
-        font-weight: 600;
+        
         opacity: 0.8;
     }
 `

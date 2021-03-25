@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import Login from '../google/login';
@@ -6,24 +6,17 @@ import Login from '../google/login';
 
 import UserProfile from './Profile/UserProfile/userProfile';
 import Header from './header';
+import AdminCleanup from './adminCleanup';
 
 
-import { useSelector, useDispatch } from 'react-redux';
-import{ initializeAccount } from '../../redux/reducers/account';
+import { useSelector } from 'react-redux';
+
 
 
 
 const Navbar = () => {
     const account = useSelector( state => state.account.user );
-    const dispatch = useDispatch();
     
-    useEffect(() => {
-        const initializeUserAccount = async () => {
-            await dispatch(initializeAccount());
-        }
-        initializeUserAccount();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
 
 
     if(!account){
@@ -38,6 +31,7 @@ const Navbar = () => {
     return (
         <NavbarContainer>
             <Header />
+            <AdminCleanup />
             <UserProfile />
         </NavbarContainer>
     )
@@ -55,7 +49,7 @@ const NavbarContainer = styled.div`
     color: ${ props=> props.theme.colors.black };
     position: sticky; 
     top: 0;
-    z-index: 1;
+    z-index: 100;
 
     @media(min-width: 650px){
         padding: 1rem 3rem;

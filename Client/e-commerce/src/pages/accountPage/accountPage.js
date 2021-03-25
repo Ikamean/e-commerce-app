@@ -1,30 +1,35 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import { useSelector } from 'react-redux';
 
+import{ useSelector } from 'react-redux';
+
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
+
+import Uploads from '../../components/uploads/uploads';
+import UploadBtn from '../../components/uploadBtn';
 
 const AccountPage = () => {
-    const account = useSelector( state => state.account.user );
-    let { name, email, givenName, uploads } = '';
-
-    if(account){
-        name = account.name;
-        email = account.email;
-        givenName = account.givenName;
-        uploads = account.uploads;
-    }
-
+    const account =  useSelector(state => state.account.user );
+    
     if(!account){
-        return <div>Loading...</div>
+        return <Centered> <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /> </Centered>
     }
 
 
     return (
-        
-        <div>
-            { name }
-        </div>
+        <>  
+            <UploadBtn />
+            <Uploads uploads={account.uploads}/>
+        </>
     )
 }
 
 export default AccountPage
+
+export const Centered = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`

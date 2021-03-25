@@ -18,7 +18,7 @@ const AccountDetails = () => {
 
     return (
         <Details onClick={ ()=> handleClick() }>
-            Account 
+            My Products 
         </Details>
     )
 }

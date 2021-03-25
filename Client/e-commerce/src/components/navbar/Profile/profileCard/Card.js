@@ -13,7 +13,7 @@ import AccountDetails from './accountDetails';
 import UploadFormButton from './uploadFormButton';
 
 const Card = ({ account }) => {
-    const { picture, name, email, creationDate, uploads } = account
+    const { picture, name, email, uploads } = account
     const open = useSelector( state => state.account.userCard )
 
     return (

@@ -11,7 +11,7 @@ const Email = ({ email }) => {
 
 export default Email
 
-const EmailContainer = styled.div`
+export const EmailContainer = styled.div`
     display: flex;
     justify-content: flex-end;
     font-style: normal;
