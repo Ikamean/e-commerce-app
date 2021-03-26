@@ -15,7 +15,7 @@ const Header = () => {
 
     return (
         <HeaderContainer onClick={ () => handleClick() } onFocus={()=>handleClick()}>
-            Climbing Oat
+            Gear Market
         </HeaderContainer>
     )
 }
