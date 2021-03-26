@@ -15,7 +15,7 @@ const Header = () => {
 
     return (
         <HeaderContainer onClick={ () => handleClick() } onFocus={()=>handleClick()}>
-            Extreme Shop
+            Climbing Oat
         </HeaderContainer>
     )
 }
@@ -25,16 +25,16 @@ export default Header
 const HeaderContainer = styled.h1`
     height: 28px;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
     font-size: 16px;
     line-height: 28px;
     letter-spacing: 1px;
-    color: ${ props=> props.theme.colors.black };
-    opacity: 70%;
+    color: ${ props=> props.theme.colors.blue };
+    opacity: 1;
     cursor: pointer;
     &:hover, :focus{
         opacity: 0.8;
-        font-weight: 500;
+        font-weight: 600;
     }
 
     @media(min-width: 650px){

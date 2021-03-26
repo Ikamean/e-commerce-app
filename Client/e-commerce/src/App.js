@@ -9,6 +9,7 @@ import FormPage from './pages/UploadFormPage/FormPage';
 import CategoryPage from './pages/categoryPage/categoryPage';
 
 import Navbar from './components/navbar/navbar';
+import Footer from './components/Footer/footer';
 
 const App = () => {
     
@@ -36,7 +37,7 @@ const App = () => {
             </Route>
 
         </Switch>
-
+        <Footer />
     </>
     )
 }
