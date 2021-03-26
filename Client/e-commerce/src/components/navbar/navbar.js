@@ -21,19 +21,23 @@ const Navbar = () => {
 
     if(!account){
         return(
-            <NavbarContainer>
-                <Header />
-                <Login />
-            </NavbarContainer>
+            <>
+                <NavbarContainer>
+                    <Header />
+                    <Login />
+                </NavbarContainer>
+            </>
         )
     }
 
     return (
-        <NavbarContainer>
-            <Header />
-            <AdminCleanup />
-            <UserProfile />
-        </NavbarContainer>
+        <>
+            <NavbarContainer>
+                <Header />
+                <AdminCleanup />
+                <UserProfile />
+            </NavbarContainer>
+        </>
     )
 }
 

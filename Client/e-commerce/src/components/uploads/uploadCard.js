@@ -57,14 +57,11 @@ const UploadCardConteiner = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     height: auto;
+    width: 300px;
     gap: 50px;
     background-color: ${ props => props.theme.colors.white };
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    position: relative;
-    @media(min-width: 650px){
-        //padding: 2rem 2rem;
-    }
     `
 const ContainerGap = styled.div`
     display:flex;

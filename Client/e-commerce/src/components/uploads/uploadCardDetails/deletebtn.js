@@ -37,6 +37,10 @@ const Deletebtn = ({id}) => {
 
 
     const handleDelete = async () => {
+        let confirm = window.confirm('Delete Product?');
+        
+        if(!confirm) return null;
+
         let finishedLoading = await deleteProduct(id);
         setDeleteLoading(true)
         
@@ -57,22 +61,24 @@ const Deletebtn = ({id}) => {
 
                 <DeleteToggle onClick={ ()=> setOpen(!open)}>
                     <HiDotsVertical />
-                </DeleteToggle>
-
-                {
-                open &&
-                <DeleteButton onClick={()=> handleDelete()}> <AiFillDelete /> Delete </DeleteButton>
                 
-                }
 
-                {
+                    {
+                    open &&
+                    <DeleteButton onClick={()=> handleDelete()}> <AiFillDelete /> Delete </DeleteButton>
+                    
+                    }
 
-                deleteLoading &&
-                <DeleteLoader>
-                        <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} />
-                </DeleteLoader>
+                    {
 
-                }
+                    deleteLoading &&
+                    <DeleteLoader>
+                            <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} />
+                    </DeleteLoader>
+
+                    }
+
+                </DeleteToggle>
             
             
             </>  
@@ -81,15 +87,17 @@ const Deletebtn = ({id}) => {
 
 export default Deletebtn
 const DeleteToggle = styled.span`
-    position: absolute;
-    top:5px;
-    right:0;
+    position: relative;
     font-size: 24px;
+    display: flex;
+    justify-content: flex-end;
     cursor: pointer;
+    transition: all 0.5s ease;
 `
 const DeleteButton = styled.button`
     position: absolute;
-    top:1px;
+    z-index: 10;
+    top:0;
     right:20px;
     border: none;
     outline: none;
@@ -98,7 +106,7 @@ const DeleteButton = styled.button`
     opacity: 70%;
     background-color: ${ props => props.theme.colors.white };
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 8px;
+    padding:0.5rem 3rem;
     font-size: 12px;
     border-radius: 4px;
     cursor: pointer;
@@ -109,10 +117,12 @@ const DeleteButton = styled.button`
         background-color: ${ props => props.theme.colors.blue };
         opacity: 1;
     }
+    transition: all 0.5s ease;
 `
 
 const DeleteLoader = styled.div`
     position: absolute;
     top: 0;
     left: 150px;
+    transition: all 0.5s ease;
 `

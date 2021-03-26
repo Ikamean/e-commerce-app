@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import UploadCard from './uploadCard';
 
 const Uploads = ({uploads}) => {
-    
+ 
 
     return (
         <ProductConteiner>
@@ -26,6 +26,7 @@ const ProductConteiner = styled.div`
     justify-content: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    background-color: ${ props => props.theme.colors.white };
 `
 
 const UploadsContainer = styled.div`
@@ -36,6 +37,7 @@ const UploadsContainer = styled.div`
     gap: 150px;
     margin-bottom: 150px;
     margin-top: 50px;
+    background-color: ${ props => props.theme.colors.white };
     @media( min-width: 850px){
         display: grid;
         grid-template-columns: 1fr 1fr;

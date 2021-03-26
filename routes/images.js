@@ -29,6 +29,22 @@ imagesRouter.get('/:id', async ( req, res) => {
         console.error(error);
         res.status(404).json('document doesnt exists')
     }
-})
+});
+
+imagesRouter.get('/category/:category', async ( req, res ) => {
+    try {
+        const category = req.params.category;
+
+        const categoryList = await Upload.find({ category : category })
+
+        console.log(category);
+        //console.log(categoryList);
+        res.status(200).json(categoryList);
+        
+    } catch (error) {
+        console.log(error.message);
+        res.send(500).json('Ooopppss. something went wrong');
+    }
+} )
 
 module.exports = imagesRouter;

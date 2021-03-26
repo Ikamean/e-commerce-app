@@ -81,9 +81,9 @@ uploadRouter.delete('/deleteAll', async ( req, res) => {
             await Account.updateMany({}, { $set: { uploads : [] } });
 
             
-            res.status(200).send('Deleted All uploaded content');
+            res.status(200).json('Deleted All uploaded content');
         }{
-            res.status(400).send('Must Be logged in as administrator to delete all documents');
+            res.status(400).json('Must Be logged in as administrator to delete all documents');
         }
         
     } catch (error) {

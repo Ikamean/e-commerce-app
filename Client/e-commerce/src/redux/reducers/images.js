@@ -1,9 +1,9 @@
-import { getAllImages, getOneImage } from '../../axios/imagesService';
+import { getAllImages, getCategoryList } from '../../axios/imagesService';
 import { DeleteAllUploads } from '../../axios/AdminDelete';
 
 const initialState = {
     "images" : [],
-    "currentImage" : null
+    "categoryList" : []
 }
 
 const imagesReducer = (state=initialState, action) => {
@@ -11,8 +11,8 @@ const imagesReducer = (state=initialState, action) => {
         case 'Initialize_Images' : 
             state = { ...state, images : action.data }
             return state
-        case 'Initialize_Current_Image' :
-            state = { ...state, currentImage : action.data }
+        case 'Initialize_Category' :
+            state = { ...state, categoryList : action.data }
             return state
         case 'Admin_Cleanup' : 
             return initialState
@@ -20,6 +20,15 @@ const imagesReducer = (state=initialState, action) => {
     }
 }
 
+export const initCategory = (category) => {
+    return async dispatch => {
+        let payload = await getCategoryList(category);
+        await dispatch({
+            type: 'Initialize_Category',
+            data: payload
+        })
+    }
+}
 
 export const initAllImages = () => {
     return async dispatch => {
@@ -31,15 +40,7 @@ export const initAllImages = () => {
     }
 }
 
-export const initCurrentImage = (id) => {
-    return async dispatch => {
-        let currentImage = await getOneImage(id);
-        await dispatch({
-            type: 'Initialize_Current_Image',
-            data: currentImage
-        })
-    }
-}
+
 
 export const adminCleanup = () => {
     return async dispatch =>{

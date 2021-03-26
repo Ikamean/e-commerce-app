@@ -6,9 +6,15 @@ export const getAllImages = async () => {
     return images.data
 }
 
-export const getOneImage = async (id) =>{
-    let image = await axios.get(`api/images/${id}`);
-    return image.data
+
+export const getCategoryList = async (category) => {
+    try {
+        let res = await axios.get(`api/images/category/${category}`);
+        return res.data;
+    } catch (error) {
+        console.log(error.message);
+    }
+    
 }
 
 

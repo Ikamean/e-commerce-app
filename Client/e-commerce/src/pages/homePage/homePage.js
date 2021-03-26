@@ -10,6 +10,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 
 import Uploads from '../../components/uploads/uploads';
+import Sort from '../../components/Sort/sort';
 
 const HomePage = () => {
     const dispatch = useDispatch();
@@ -25,11 +26,18 @@ const HomePage = () => {
     }, [dispatch])
 
     if(images.length === 0){
-        return <Centered> <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /> </Centered>
+        return  <>
+        <Sort />
+        <Centered> <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /> </Centered>
+
+        </>
     }
 
     return (
+        <>
+        <Sort />
         <Uploads uploads={images.allUploads} />
+        </>
     )
 }
 

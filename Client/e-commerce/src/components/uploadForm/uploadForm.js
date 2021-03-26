@@ -118,12 +118,13 @@ const UploadFormContainer = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
-
+    background-color: ${ props => props.theme.colors.white };
     @media( min-width: 650px){
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-evenly;
     }
+
 `
 
 

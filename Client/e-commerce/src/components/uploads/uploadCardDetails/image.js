@@ -11,29 +11,30 @@ const UploadImages = ({ images }) => {
     
 
     return (
-        <UploadedImagesContainer>
-            <ExpandArrow onClick={()=> setExpand(!expand)}>
-                <FaExpandArrowsAlt />
-            </ExpandArrow>
-            
-            {
+        <>
+        {
                 expand &&
                 <ExpandedImage>
-                    <Image loading='lazy' publicId={primaryImage} cloudName='ikameancloud'
+                    <Image  publicId={primaryImage} cloudName='ikameancloud'
                         
-                        
-                        width="400"
+                        width="500"
                         crop="scale"
                         radius='10'
                         >
                     </Image>
                 </ExpandedImage>
             }
+        <UploadedImagesContainer>
+            <ExpandArrow onClick={()=> setExpand(!expand)}>
+                <FaExpandArrowsAlt />
+            </ExpandArrow>
             
             
-            <Image  loading='lazy' publicId={primaryImage} cloudName='ikameancloud'>
+            
+            
+            <Image   publicId={primaryImage} cloudName='ikameancloud'>
                 <Transformation 
-                width="300"
+                width="1000"
                 
                 crop="scale" radius="10" />
             </Image>
@@ -44,7 +45,7 @@ const UploadImages = ({ images }) => {
 
                 <ClickerDiv key={index} onClick={ () => setPrimaryImage(image)} >
 
-                    <Image loading='lazy'  publicId={image} cloudName='ikameancloud' >
+                    <Image   publicId={image} cloudName='ikameancloud' >
                         <Transformation  width="100"  crop="scale"  radius="10" />
                     </Image> 
 
@@ -54,6 +55,7 @@ const UploadImages = ({ images }) => {
             </ImagesContainer>
 
         </UploadedImagesContainer>
+        </>
     )
 }
 
@@ -71,25 +73,32 @@ const UploadedImagesContainer = styled.div`
 
 const ExpandedImage = styled.div`
     position: absolute;
+    z-index: 5;
+    margin-left: auto;
+    margin-right: auto;
     left: 0;
-    z-index: 1;
+    right: 0;
+    text-align: center;
+    
 `
 const ExpandArrow = styled.span`
-    color: ${ props => props.theme.colors.black };
-    left: 20px;
-    top: 10px;
-    z-index: 2;
-    cursor: pointer;
-    position: absolute;
-    &:hover,:focus,:active{
-        font-size: 1.5rem;
-        color: ${ props => props.theme.colors.blue };
+    display: none;
+    @media(min-width: 750px){
+        display: block;
+        color: ${ props => props.theme.colors.black };
+        left: 20px;
+        top: 10px;
+        z-index: 6;
+        cursor: pointer;
+        position: absolute;
+        &:hover,:focus,:active{
+            font-size: 1.5rem;
+            color: ${ props => props.theme.colors.blue };
+        }
+        transition: all 0.5s ease;
     }
-    transition: all 0.7s ease;
+    
 `
-
-
-
 
 const ImagesContainer = styled.div`
     display: flex;
