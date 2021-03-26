@@ -19,7 +19,7 @@ export default CategoryFilter
 
 const FilterContainer = styled.div`
     background-color: ${ props => props.theme.colors.white };
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     padding: 1.5rem;
     font-weight: 600;
