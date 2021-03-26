@@ -78,7 +78,8 @@ export const DetailsContainer = styled.div`
         border-bottom: ${ props => props.category && `2px solid ${props.theme.colors.blue}` };
         gap: 10px;
         background-color: ${ props => props.theme.colors.white };
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-bottom: 1px solid ${ props => props.theme.colors.blue };
         border-radius: 5px;
         padding: 8px;
         cursor: ${ props => (props.details || props.contact) && 'pointer'};

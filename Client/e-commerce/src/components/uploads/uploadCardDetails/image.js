@@ -31,14 +31,15 @@ const UploadImages = ({ images }) => {
             
             
             
-            
-            <Image   publicId={primaryImage} cloudName='ikameancloud'>
-                <Transformation 
-                width="1000"
-                
-                crop="scale" radius="10" />
-            </Image>
-
+            <PrimaryImageContainer>
+                <Image   publicId={primaryImage} cloudName='ikameancloud'>
+                    <Transformation 
+                    width="300"
+                    crop="scale" 
+                    radius="10"
+                    background-size='cover' />
+                </Image>
+            </PrimaryImageContainer>
             <ImagesContainer>
             {
                 images.map( (image, index) =>
@@ -65,6 +66,7 @@ const UploadedImagesContainer = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 20px;
     background-color: ${ props => props.theme.colors.white };
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -99,13 +101,19 @@ const ExpandArrow = styled.span`
     }
     
 `
-
+const PrimaryImageContainer = styled.div`
+    height: 400px;
+    width: 300px;
+    display: flex;
+    align-items: flex-start;
+`
 const ImagesContainer = styled.div`
     display: flex;
     width: 280px;
     gap: 10px;
     padding: 1rem 0.5rem;
     justify-content: flex-start;
+    align-items: center;
     overflow-x: auto;
 `
 const ClickerDiv = styled.div`
