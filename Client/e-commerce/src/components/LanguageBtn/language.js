@@ -11,8 +11,6 @@ const Language = () => {
 
     const { i18n } = useTranslation();
 
-    console.log(i18n);
-
     
 
     const changeLanguage = (lng) => {
@@ -35,9 +33,10 @@ export default Language
 const LanguageContainer = styled.div`
     position: absolute;
     top:0;
-    right: 2%;
+    right: 17%;
     display: flex;
     gap: 3px;
+    
     border-bottom: 1px solid ${ props => props.theme.colors.blue};
     border-right: 1px solid ${ props => props.theme.colors.blue};
 `
