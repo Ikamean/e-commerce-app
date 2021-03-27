@@ -33,7 +33,7 @@ export default Language
 const LanguageContainer = styled.div`
     position: absolute;
     top:0;
-    right: 17%;
+    right: 15px;
     display: flex;
     gap: 3px;
     

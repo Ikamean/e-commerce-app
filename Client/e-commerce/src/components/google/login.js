@@ -57,7 +57,7 @@ export const GoogleBtn = styled.button`
     color: ${ props => props.theme.google.color };
     font-size: 14px;
     font-weight: 900;
-    height: 44px;
+    height: 30px;
     min-width: 80px;
     border-radius: 4px;
     &:hover{

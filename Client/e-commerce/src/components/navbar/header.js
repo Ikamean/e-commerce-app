@@ -40,5 +40,9 @@ const HeaderContainer = styled.h1`
     @media(min-width: 650px){
         font-size: 24px;
     }
+    @media(max-width: 360px){
+        font-size: 14px;
+        
+    }
 
 `

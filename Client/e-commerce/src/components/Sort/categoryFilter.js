@@ -19,8 +19,6 @@ export default CategoryFilter
 
 const FilterContainer = styled.div`
     background-color: ${ props => props.theme.colors.white };
-    //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
     padding: 1.5rem;
     font-weight: 600;
     text-align: center;
@@ -32,5 +30,8 @@ const FilterContainer = styled.div`
     margin-bottom: 2rem;
     @media(min-width: 650px){
         font-size: 18px;
+    }
+    @media(max-width: 360px){
+        font-size: 12px;
     }
 `

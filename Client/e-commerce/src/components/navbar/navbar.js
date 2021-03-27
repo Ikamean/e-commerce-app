@@ -50,16 +50,12 @@ const NavbarContainer = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     justify-content: space-between;
     align-items: center;
-    padding: 1rem ;
+    padding: 2rem 1rem 1rem 1rem ;
     background-color: ${ props=> props.theme.colors.white };
     color: ${ props=> props.theme.colors.black };
     position: sticky; 
     top: 0;
     z-index: 100;
-
-    @media(min-width: 650px){
-        padding: 1rem 3rem;
-    }
 `
 
 

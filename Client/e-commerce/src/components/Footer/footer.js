@@ -3,8 +3,12 @@ import styled from 'styled-components';
 
 import { AiFillLinkedin, AiFillGithub, AiFillFacebook } from 'react-icons/ai';
 
+import { useTranslation } from 'react-i18next';
+
 
 const Footer = () => {
+    const { t } = useTranslation();
+
     return (
         <FooterContainer>
             <SocialMediaContainer>
@@ -22,7 +26,7 @@ const Footer = () => {
 
             </SocialMediaContainer>
             <AllRights>
-                All Rights Reserved 2021 Ikamean
+                {t('Rights')}
             </AllRights>
         </FooterContainer>
     )
@@ -46,6 +50,9 @@ const AllRights = styled.span`
     opacity: 0.8;
     font-size: 15px;
     font-weight: 600;
+    @media(max-width: 360px){
+        font-size: 12px;
+    }
 `
 const SocialMediaContainer = styled.div`
     display: flex;

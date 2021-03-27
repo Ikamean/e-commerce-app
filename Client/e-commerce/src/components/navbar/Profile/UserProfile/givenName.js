@@ -41,4 +41,7 @@ const AvatarContainer = styled.div`
         
         opacity: 0.8;
     }
+    @media(max-width: 360px){
+        font-size: 12px;
+    }
 `
