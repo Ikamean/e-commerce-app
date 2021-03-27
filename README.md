@@ -1,6 +1,6 @@
 # E-Commerce Project
 
-## [See Live Project on Heroku](https://gearmarket.herokuapp.com/)
+## [See Live Project on Heroku](http://www.gearmarket.com.ge/)
 
 ### Build with MERN stack
 
