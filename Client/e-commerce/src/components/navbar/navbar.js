@@ -11,7 +11,7 @@ import AdminCleanup from './adminCleanup';
 
 import { useSelector } from 'react-redux';
 
-
+import Language from '../LanguageBtn/language';
 
 
 const Navbar = () => {
@@ -24,6 +24,7 @@ const Navbar = () => {
             <>
                 <NavbarContainer>
                     <Header />
+                    <Language />
                     <Login />
                 </NavbarContainer>
             </>
@@ -35,6 +36,7 @@ const Navbar = () => {
             <NavbarContainer>
                 <Header />
                 <AdminCleanup />
+                <Language />
                 <UserProfile />
             </NavbarContainer>
         </>

@@ -6,12 +6,16 @@ import { toggleUserCard } from '../../../../redux/reducers/account';
 
 import { useDispatch } from 'react-redux';
 
+import { useTranslation } from 'react-i18next';
+
 const GivenName = ({ givenName }) => {
     const dispatch = useDispatch();
+    const { t } = useTranslation();
+
     
     return (
         <AvatarContainer onClick={ () => dispatch(toggleUserCard()) }>
-           Hi, { givenName }!
+            {t('Welcome')}, { givenName }!
         </AvatarContainer>
     )
 }

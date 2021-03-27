@@ -10,6 +10,8 @@ import Loader from "react-loader-spinner";
 import Uploads from '../../components/uploads/uploads';
 import UploadBtn from '../../components/uploadBtn';
 
+
+
 const AccountPage = () => {
     const account =  useSelector(state => state.account.user );
     
@@ -22,6 +24,7 @@ const AccountPage = () => {
         <>  
             <UploadBtn />
             <Uploads uploads={account.uploads}/>
+            
         </>
     )
 }
@@ -33,3 +36,4 @@ export const Centered = styled.div`
     justify-content: center;
     align-items: center;
 `
+

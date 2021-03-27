@@ -8,17 +8,21 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import { Centered } from '../accountPage/accountPage';
 
+
+
 const FormPage = () => {
     const account = useSelector( state => state.account.user );
 
     if(!account){
-        return <Centered> <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /> </Centered>
+        return <>
+         <Centered> <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /> </Centered>
+       
+         </>
     }
-    return (
-
+    return <>
             <UploadForm />
             
-    )
+            </>
 }
 
 export default FormPage

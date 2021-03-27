@@ -7,12 +7,14 @@ import { useDispatch } from 'react-redux';
 import { logoutAccount } from '../../redux/reducers/account';
 
 
-
+import { useTranslation } from 'react-i18next';
 
 const client_id = process.env.REACT_APP_CLIENT_ID;
 
 const Logout = () => {
     const dispatch = useDispatch();
+
+    const { t } = useTranslation();
     
     const onLogoutSuccess = (res) =>{
         dispatch(logoutAccount());
@@ -24,7 +26,7 @@ const Logout = () => {
                     clientId={client_id}
                     render={renderProps => (
                         <Details onClick={renderProps.onClick} disabled={renderProps.disabled}>
-                            Logout
+                            {t('Logout')}
                         </Details>
                     )}
                     onLogoutSuccess={()=>onLogoutSuccess()}

@@ -7,10 +7,14 @@ import { toggleUserCard } from '../../../../redux/reducers/account';
 
 import { Details } from './accountDetails';
 
+import { useTranslation } from 'react-i18next';
+
 
 const UploadFormButton = () => {
     const dispatch = useDispatch();
     const history = useHistory();
+
+    const { t } = useTranslation();
 
     const handleSubmit = () => {
         dispatch(toggleUserCard());
@@ -18,7 +22,7 @@ const UploadFormButton = () => {
     }
 
     return (
-        <Details onClick={()=>handleSubmit()}>New Upload</Details>
+        <Details onClick={()=>handleSubmit()}> {t('New Upload')} </Details>
     )
 }
 

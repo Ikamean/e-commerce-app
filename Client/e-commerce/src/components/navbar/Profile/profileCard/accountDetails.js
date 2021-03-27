@@ -7,9 +7,13 @@ import { useDispatch } from 'react-redux';
 
 import { toggleUserCard } from '../../../../redux/reducers/account';
 
+import { useTranslation } from 'react-i18next';
+
 const AccountDetails = () => {
     const history = useHistory('/');
     const dispatch = useDispatch();
+
+    const { t } = useTranslation();
 
     const handleClick = () => {
         history.push('/account');
@@ -18,7 +22,7 @@ const AccountDetails = () => {
 
     return (
         <Details onClick={ ()=> handleClick() }>
-            My Products 
+            {t('My Products')} 
         </Details>
     )
 }

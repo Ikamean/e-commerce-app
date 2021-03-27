@@ -6,11 +6,15 @@ import { Label, HorizontalAlign } from './uploadForm';
 import { FaMountain, FaSkiing } from 'react-icons/fa';
 import { GiMountaintop } from 'react-icons/gi';
 
+import { useTranslation } from 'react-i18next';
+
 
 const CategoryField = ({ setCategory }) => {
     const [ open, setOpen ] = useState(false);
 
     const [ selected, setSelected ] = useState(null);
+
+    const { t } = useTranslation();
 
     const handleSelect = (value) => {
         setCategory(value);
@@ -20,19 +24,19 @@ const CategoryField = ({ setCategory }) => {
     return (
         <Label htmlFor='category'>
             <CategoryContainer onClick={ () => setOpen(!open)} > 
-                <SpanPadding > { selected? selected : 'Choose Category '} </SpanPadding>
+                <SpanPadding > { selected? selected : t('Choose Category') } </SpanPadding>
                 <CategoryList open={open}>
 
                     <Option onClick={()=>handleSelect('Rock Climbing')}>
-                            <HorizontalAlign> <GiMountaintop /> Rock Climbing </HorizontalAlign>
+                            <HorizontalAlign> <GiMountaintop /> {t('Category.Rock Climbing')} </HorizontalAlign>
                     </Option>
 
                     <Option onClick={()=>handleSelect('Mountaineering')}>
-                            <HorizontalAlign> <FaMountain />Mountaineering </HorizontalAlign>
+                            <HorizontalAlign> <FaMountain /> {t('Category.Mountaineering')} </HorizontalAlign>
                     </Option>
 
                     <Option onClick={()=>handleSelect('Skiing')}>
-                            <HorizontalAlign> <FaSkiing /> Skiing </HorizontalAlign>
+                            <HorizontalAlign> <FaSkiing /> {t('Category.Skiing')} </HorizontalAlign>
                     </Option>
 
                 </CategoryList>

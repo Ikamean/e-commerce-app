@@ -10,9 +10,13 @@ import { initCategory } from '../../redux/reducers/images';
 
 import { useHistory } from 'react-router-dom';
 
+import { useTranslation } from 'react-i18next';
+
 const FilterOption = ({ option }) => {
     const dispatch = useDispatch();
     const history = useHistory();
+
+    const { t } = useTranslation();
 
     const handleOption = async () =>{
         await dispatch(initCategory(option));
@@ -23,7 +27,7 @@ const FilterOption = ({ option }) => {
         return (
             
             <Option onClick={() => handleOption('Rock Climbing')}>
-                <GiMountaintop /> <span>{option}</span>
+                <GiMountaintop /> <span>{t('Category.Rock Climbing')}</span>
             </Option>
             
         )
@@ -32,7 +36,7 @@ const FilterOption = ({ option }) => {
     if(option === 'Mountaineering'){
         return (
             <Option onClick={() => handleOption('Mountaineering')}>
-                <FaMountain /> <span>{option}</span>
+                <FaMountain /> <span>{t('Category.Mountaineering')}</span>
             </Option>
         )
     }
@@ -41,7 +45,7 @@ const FilterOption = ({ option }) => {
         return (
             <Option onClick={() => handleOption('Skiing')}>
 
-                <FaSkiing /> <span>{option}</span>
+                <FaSkiing /> <span>{t('Category.Skiing')}</span>
             </Option>
         )
     }

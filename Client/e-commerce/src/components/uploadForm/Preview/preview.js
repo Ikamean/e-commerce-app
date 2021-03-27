@@ -7,8 +7,12 @@ import Loader from "react-loader-spinner";
 
 import { VscRemove } from 'react-icons/vsc';
 
+import { useTranslation } from 'react-i18next';
+
 
 const Preview = ({ source, setPreviewSource, loading }) => {    
+
+    const { t } = useTranslation();
 
     const handleRemove = (i) =>{
         source = source.filter( (src, index) => index !== i ); 
@@ -26,7 +30,7 @@ const Preview = ({ source, setPreviewSource, loading }) => {
                     <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} />
                 </LoaderContainer>
                 }
-                <PreviewHeader>Preview</PreviewHeader>
+                <PreviewHeader> {t('Preview')} </PreviewHeader>
                 <PreviewContainer>
                     
                     {

@@ -5,7 +5,7 @@ import { HorizontalAlign } from '../../../uploadForm/uploadForm';
 
 import { DetailsHeader, DetailsContainer, DetailText } from '../../uploadCard';
 
-
+import { useTranslation } from 'react-i18next';
 
 import AuthorEmail from './authorEmail';
 
@@ -18,13 +18,14 @@ const Contact = ({ user }) => {
     const [ open, setOpen ] = useState(false);  
     const { authorPicture, authorName, authorFacebook, authorEmail, authorNumber } = user;
     
+    const { t } = useTranslation();
 
     return (
         <DetailsContainer contact='contact' onClick={ ()=> setOpen(!open)} >
 
         
             <DetailsHeader contact='contact'>
-                Contact Seller
+                {t('Contact Seller')}
             </DetailsHeader>
             {   
                 open &&

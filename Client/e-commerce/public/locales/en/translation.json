@@ -1,0 +1,22 @@
+{ 
+  "Welcome": "Hi",
+  "Category": {
+    "Rock Climbing" : "Rock Climbing",
+    "Mountaineering" : "Mountaineering",
+    "Skiing" : "Skiing"
+  },
+  "Price": "Price",
+  "Created": "Created",
+  "Product Details": "Product Details",
+  "Contact Seller": "Contact Seller",
+  "Uploads": "Uploads",
+  "New Upload": "New Upload",
+  "My Products": "My Products",
+  "Logout": "Logout",
+  "Delete": "Delete",
+  "Images": "Images",
+  "Choose Category": "Choose Category",
+  "Number" : "Number",
+  "Details" : "Details",
+  "Preview" : "Preview"
+}

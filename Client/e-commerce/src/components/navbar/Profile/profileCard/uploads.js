@@ -1,10 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { useTranslation } from 'react-i18next';
+
 const Uploads = ({ uploads }) => {
+    const { t } = useTranslation();
+
+
     return (
         <UploadsContainer>
-           {` uploads :  ${uploads.length} `}
+           {` ${t('Uploads')} :  ${uploads.length} `}
         </UploadsContainer>
     )
 }

@@ -15,6 +15,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { HiDotsVertical } from 'react-icons/hi';
 import { AiFillDelete } from 'react-icons/ai';
 
+import { useTranslation } from 'react-i18next';
+
 const Deletebtn = ({id}) => {
     const [ deleteLoading, setDeleteLoading ] = useState(false);
     const [ open, setOpen ] = useState(false);
@@ -25,6 +27,8 @@ const Deletebtn = ({id}) => {
 
     const location = window.location.href;
     const locationRegex = /account/;
+
+    const { t } = useTranslation();
 
     let showDelete = locationRegex.test(location);
 
@@ -65,7 +69,7 @@ const Deletebtn = ({id}) => {
 
                     {
                     open &&
-                    <DeleteButton onClick={()=> handleDelete()}> <AiFillDelete /> Delete </DeleteButton>
+                    <DeleteButton onClick={()=> handleDelete()}> <AiFillDelete /> {t('Delete')} </DeleteButton>
                     
                     }
 

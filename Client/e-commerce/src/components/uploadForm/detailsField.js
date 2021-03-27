@@ -5,10 +5,15 @@ import { Label, HorizontalAlign } from './uploadForm';
 
 import { IoTextSharp } from 'react-icons/io5';
 
+import { useTranslation } from 'react-i18next';
+
 const DetailsField = ({textAreaInput, setTextAreaInput}) => {
+
+    const { t } = useTranslation();
+
     return (
-        <Label htmlFor='textArea'> <HorizontalAlign> <IoTextSharp/>  Details</HorizontalAlign>
-                <TextArea placeholder='Provide Item details' value={textAreaInput} 
+        <Label htmlFor='textArea'> <HorizontalAlign> <IoTextSharp/>  {t('Details')} </HorizontalAlign>
+                <TextArea placeholder={t('Details')} value={textAreaInput} 
                 onChange={(e)=>setTextAreaInput(e.target.value)} id='textArea'  required />
             </Label>
     )

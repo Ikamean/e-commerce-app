@@ -3,11 +3,16 @@ import styled from 'styled-components';
 
 import { useHistory } from 'react-router-dom';
 
+import { useTranslation } from 'react-i18next';
+
 const UploadBtn = () => {
     const history = useHistory();
+
+    const { t } = useTranslation();
+
     return (
         
-            <Button onClick={ () => history.push('/upload')}>Upload New Product</Button>
+            <Button onClick={ () => history.push('/upload')}> {t('New Upload')} </Button>
         
     )
 }

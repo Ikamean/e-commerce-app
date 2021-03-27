@@ -14,6 +14,8 @@ import Loader from "react-loader-spinner";
 import { useDispatch } from 'react-redux';
 import { initCategory } from '../../redux/reducers/images';
 
+
+
 const CategoryPage = () => {
     const categoryList = useSelector(state => state.uploads.categoryList);
     const dispatch = useDispatch(); 
@@ -36,6 +38,7 @@ const CategoryPage = () => {
         return<>
         <Sort />
         <Centered> <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /> </Centered>
+        
         </>
     }
 
@@ -43,6 +46,7 @@ const CategoryPage = () => {
         <>  
             <Sort />
             <Uploads uploads={categoryList}/>
+            
         </>
 )
 }

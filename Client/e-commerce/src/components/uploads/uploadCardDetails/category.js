@@ -2,10 +2,14 @@ import React from 'react';
 
 import { DetailsContainer, DetailText } from '../uploadCard';
 
+import { useTranslation } from 'react-i18next';
+
 const UploadCategory = ({ category }) => {
+    const { t } = useTranslation();
+
     return (
         <DetailsContainer category='category'>
-            <DetailText> { category } </DetailText>
+            <DetailText> { t(`Category.${category}`) } </DetailText>
         </DetailsContainer>
     )
 }

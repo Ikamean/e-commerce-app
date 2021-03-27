@@ -1,0 +1,22 @@
+{ 
+  "Welcome": "გამარჯობა",
+  "Category": {
+    "Rock Climbing" : "კლდეზე ცოცვა",
+    "Mountaineering" : "ალპინიზმი",
+    "Skiing" : "სრიალი"
+  },
+  "Price": "ფასი",
+  "Created": "თარიღი",
+  "Product Details": "ნივთის აღწერა",
+  "Contact Seller": "კონტაქტი",
+  "Uploads": "გასაყიდი ნივთები",
+  "New Upload": "ნივთის დამატება",
+  "My Products": "ჩემი ნივთები",
+  "Logout": "სისტემიდან გამოსვლა",
+  "Delete": "ნივთის წაშლა",
+  "Images": "სურათები",
+  "Choose Category": "კატეგორია",
+  "Number" : "ნომერი",
+  "Details" : "პროდუქტის აღწერა",
+  "Preview" : "დათვალიერება"
+}

@@ -3,9 +3,11 @@ import styled from 'styled-components';
 
 import UploadCard from './uploadCard';
 
-const Uploads = ({uploads}) => {
- 
+import ScrollTop from '../ScrollTop/scroll';
 
+const Uploads = ({uploads}) => {
+    
+    
     return (
         <ProductConteiner>
             <UploadsContainer>
@@ -15,6 +17,7 @@ const Uploads = ({uploads}) => {
                     )
                 }
             </UploadsContainer>
+            <ScrollTop />
         </ProductConteiner>
     )
 }
@@ -31,7 +34,7 @@ const ProductConteiner = styled.div`
 
 const UploadsContainer = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-start;
     justify-content: center;
     gap: 150px;
@@ -41,5 +44,6 @@ const UploadsContainer = styled.div`
     @media( min-width: 850px){
         display: grid;
         grid-template-columns: 1fr 1fr;
+        
     }
 `

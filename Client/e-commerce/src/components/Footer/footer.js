@@ -34,11 +34,12 @@ const FooterContainer = styled.div`
     background-color: ${ props => props.theme.colors.white };
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
     align-items: center;
     gap: 10px;
     padding: 2rem 2rem 1rem 2rem;
+    
 `
 const AllRights = styled.span`
     color: ${ props => props.theme.colors.blac };
