@@ -1,6 +1,6 @@
 # E-Commerce Project
 
-## [See Live Project on Heroku](https://bitcamp-e-commerce.herokuapp.com/)
+## [See Live Project on Heroku](https://gearmarket.herokuapp.com/)
 
 ### Build with MERN stack
 
