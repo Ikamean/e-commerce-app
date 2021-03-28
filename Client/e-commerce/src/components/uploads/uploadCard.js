@@ -74,11 +74,11 @@ export const DetailsContainer = styled.div`
         align-items: center;
         flex-direction: ${ props => (props.details || props.contact) && 'column' };
         justify-content: ${ props => props.category && 'center' };
-        word-break: break-word;
+        word-break: ${ props => props.details && 'break-word'};
         border-bottom: ${ props => props.category && `2px solid ${props.theme.colors.blue}` };
         gap: 10px;
         background-color: ${ props => props.theme.colors.white };
-        //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        
         border-bottom: 1px solid ${ props => props.theme.colors.blue };
         border-radius: 5px;
         padding: 8px;

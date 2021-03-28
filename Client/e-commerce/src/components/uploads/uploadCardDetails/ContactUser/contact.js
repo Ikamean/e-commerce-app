@@ -13,18 +13,19 @@ import AuthorFacebook from './authorFacebook';
 import AuthorName from './authorName';
 import AuthorNumber from './authorNumber';
 import AuthorPicture from './authorPicture';
+import AuthorMarket from './authorMarket';
 
 const Contact = ({ user }) => {
     const [ open, setOpen ] = useState(false);  
-    const { authorPicture, authorName, authorFacebook, authorEmail, authorNumber } = user;
+    const { authorPicture, authorName, authorFacebook, authorEmail, authorNumber, id } = user;
     
     const { t } = useTranslation();
 
     return (
-        <DetailsContainer contact='contact' onClick={ ()=> setOpen(!open)} >
+        <DetailsContainer contact='contact'  >
 
         
-            <DetailsHeader contact='contact'>
+            <DetailsHeader contact='contact' onClick={ ()=> setOpen(!open)}>
                 {t('Contact Seller')}
             </DetailsHeader>
             {   
@@ -41,6 +42,7 @@ const Contact = ({ user }) => {
                             <AuthorFacebook facebook={authorFacebook} />
                             <AuthorNumber number={authorNumber} />
                             <AuthorEmail email={authorEmail} />
+                            <AuthorMarket  mail={authorEmail} name={authorName}/>
                         </FlexStart>
 
                     </DetailsContainer>

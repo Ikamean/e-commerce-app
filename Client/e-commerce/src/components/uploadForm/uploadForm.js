@@ -127,8 +127,6 @@ const UploadFormContainer = styled.div`
 
 `
 
-
-
 const Form = styled.form`
     display: flex;
     flex-direction: column;
@@ -150,7 +148,10 @@ export const HorizontalAlign = styled.div`
     align-items: center;
     justify-content: center;
     gap: 10px;
-    cursor: text;   
+    cursor: ${ props => props.market ? "cursor" : "text" };
+    &:hover{
+        color: ${ props => props.market && props.theme.colors.blue};
+    }
 `
 export const Label = styled.label`
     font-weight: 500;
