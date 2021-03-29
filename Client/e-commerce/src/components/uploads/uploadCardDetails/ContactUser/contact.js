@@ -58,6 +58,7 @@ const ContactSeller = styled.span`
     cursor: pointer;
     width: auto;
     font-size: 12px;
+    padding-left: 5px;
     color: ${ props => props.theme.colors.blue };
     &:hover{
         color: ${ props => props.theme.colors.black }

@@ -102,7 +102,7 @@ const TopSectionContainer = styled.span`
     justify-content: space-between;
     transition: all 0.5s ease;
     margin-top: 5px;
-    padding-left: 5px;
+    
 `
 const OptionIcon = styled.span`
     cursor: pointer;
