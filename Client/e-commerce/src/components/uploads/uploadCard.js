@@ -28,7 +28,7 @@ const UploadCard = ({ content }) => {
             
             <ContainerGap>
 
-                <DeleteBtn id={_id} /> 
+                <DeleteBtn id={_id} user={content}/> 
                 
                 <UploadCategory category={category} />
                 
@@ -38,9 +38,8 @@ const UploadCard = ({ content }) => {
                     <CreationDate date={creationDate} />
                 </HorizontalAlign>
 
-                <UploadImages images={image} />
+                <UploadImages images={image} contentId = {_id} />
 
-                <Contact user={content}/>
             </ContainerGap>
 
                 
@@ -82,22 +81,17 @@ export const DetailsContainer = styled.div`
         background-color: ${ props => props.theme.colors.white };
         border-radius: 5px;
         padding: 6px;
-        cursor: ${ props => props.contact && 'pointer'};
-        position: ${ props => props.contact && 'absolute'};
-        left: 0;
-        top: 0;
 `
 export const DetailsHeader = styled.div`
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 1rem;
-    color: ${ props => props.contact ? props.theme.colors.blue :  props.theme.colors.black };
+    color: ${ props => props.theme.colors.black };
     display: flex;
     align-items: flex-start;
     justify-content:  flex-start;
     border:none;
-    cursor: ${ props => props.contact && 'pointer'};
     padding: 5px;
     &:hover, &:active, &:focus{
         color: ${ props => props.theme.colors.black };
@@ -110,12 +104,10 @@ export const DetailText = styled.div`
     font-weight: 600;
     font-size: 12px;
     color: ${ props => props.theme.colors.black };
-    background-color: ${ props =>  props.contact && props.theme.colors.white };
     letter-spacing: 1px;
     line-height: 1.5rem;
     max-width: 35ch;
     display: flex;
-    opacity: ${ props => props.details ? '0.7' : '1'};
     align-items: flex-start;
     justify-content: flex-start;
     text-align: left;

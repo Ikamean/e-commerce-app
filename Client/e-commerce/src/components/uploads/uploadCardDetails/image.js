@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import { useHistory } from 'react-router-dom';
 
 import {Image,  Transformation} from 'cloudinary-react';
 
-const UploadImages = ({ images }) => {
+const UploadImages = ({ images, contentId }) => {
     const [ primaryImage, setPrimaryImage ] = useState(images[0]);
-    
+    const history = useHistory();
+
+    const handleClick = () => {
+        console.log(primaryImage);
+        console.log(contentId);
+    }
     
     return (
         <>
         <UploadedImagesContainer>
-            <PrimaryImageContainer>
+            <PrimaryImageContainer onClick={()=> handleClick()}>
             
                 <Image   publicId={primaryImage} cloudName='ikameancloud'>
                     <Transformation 

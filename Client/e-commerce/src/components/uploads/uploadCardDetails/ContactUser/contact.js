@@ -24,15 +24,14 @@ const Contact = ({ user }) => {
     const { t } = useTranslation();
 
     return (
-        <PositionAbsolute>
-            <DetailsHeader contact='contact' onClick={ ()=> setOpen(!open)}>
+        <>
+            <ContactSeller  onClick={ ()=> setOpen(!open)}>
                 {t('Contact Seller')}
-            </DetailsHeader>
+            </ContactSeller>
             {   
                 open &&    
-                <DetailText contact='contact'>
-                    <DetailsContainer contact='contact'>
-
+                
+                    <SellerBox>
                         <HorizontalAlign>
                             <AuthorPicture  picture={authorPicture}/>
                             <AuthorName name={authorName} />
@@ -45,15 +44,36 @@ const Contact = ({ user }) => {
                             <AuthorEmail email={authorEmail} />
                             <AuthorMarket  mail={authorEmail} name={authorName}/>
                         </FlexStart>
-
-                    </DetailsContainer>
-                </DetailText>
+                    </SellerBox>
+                
             }
-        </PositionAbsolute>
+        </>
     )
 }
 
 export default Contact
+
+const ContactSeller = styled.span`
+    font-weight: 600;
+    cursor: pointer;
+    width: auto;
+    font-size: 16px;
+    color: ${ props => props.theme.colors.blue };
+    &:hover{
+        color: ${ props => props.theme.colors.black }
+    }
+
+`
+const SellerBox = styled.div`
+    background-color: ${ props => props.theme.colors.white};
+    position: absolute;
+    font-weight: 600;
+    font-size: 14px;
+    top:0;
+    z-index: 2;
+    padding-left: 5px;
+    width: 200px;
+`
 
 const FlexStart = styled.div`
     display: flex;
@@ -61,12 +81,9 @@ const FlexStart = styled.div`
     gap: 5px;
     justify-content: flex-start;
     align-items: flex-start;
+    padding: 5px;
 `
-const PositionAbsolute = styled.div`
-    position: absolute;
-    left:0;
-    top: 2%;
-`
+
 const CloseBtn = styled.span`
     position: absolute;
     right: 0;

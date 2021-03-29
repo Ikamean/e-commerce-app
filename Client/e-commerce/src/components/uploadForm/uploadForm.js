@@ -148,7 +148,7 @@ export const HorizontalAlign = styled.div`
     align-items: center;
     justify-content: center;
     gap: 10px;
-    cursor: ${ props => props.market ? "cursor" : "text" };
+    cursor: ${ props => props.market ? "pointer" : "text" };
     &:hover{
         color: ${ props => props.market && props.theme.colors.blue};
     }

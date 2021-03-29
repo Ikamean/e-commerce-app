@@ -17,7 +17,9 @@ import { AiFillDelete } from 'react-icons/ai';
 
 import { useTranslation } from 'react-i18next';
 
-const Deletebtn = ({id}) => {
+import Contact from './ContactUser/contact';
+
+const Deletebtn = ({id, user}) => {
     const [ deleteLoading, setDeleteLoading ] = useState(false);
     const [ open, setOpen ] = useState(false);
 
@@ -57,15 +59,16 @@ const Deletebtn = ({id}) => {
     }
 
     if(!showDelete && !admin){
-        return null
+        return <Contact user={user} />
     }
 
     return (
             <>
-
-                <DeleteToggle >
-                    <OptionIcon onClick={ ()=> setOpen(!open)}> <HiDotsVertical /> </OptionIcon>
                 
+                <DeleteToggle >
+                    <Contact user={user} />
+                    <OptionIcon onClick={ ()=> setOpen(!open)}> <HiDotsVertical /> </OptionIcon>
+                    
 
                     {
                     open &&
@@ -95,7 +98,7 @@ const DeleteToggle = styled.span`
     font-size: 24px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     transition: all 0.5s ease;
     margin-top: 5px;
 `
