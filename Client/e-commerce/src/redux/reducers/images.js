@@ -1,15 +1,19 @@
-import { getAllImages, getCategoryList } from '../../axios/imagesService';
+import { getAllImages, getCategoryList, getProduct } from '../../axios/imagesService';
 import { DeleteAllUploads } from '../../axios/AdminDelete';
 
 const initialState = {
     "images" : [],
-    "categoryList" : []
+    "categoryList" : [],
+    "currentProduct" : null
 }
 
 const imagesReducer = (state=initialState, action) => {
     switch(action.type){
         case 'Initialize_Images' : 
             state = { ...state, images : action.data }
+            return state
+        case 'Current_Product' :
+            state = { ...state, currentProduct : action.data }
             return state
         case 'Initialize_Category' :
             state = { ...state, categoryList : action.data }
@@ -40,8 +44,6 @@ export const initAllImages = () => {
     }
 }
 
-
-
 export const adminCleanup = () => {
     return async dispatch =>{
         await DeleteAllUploads();
@@ -49,6 +51,16 @@ export const adminCleanup = () => {
             type: 'Admin_Cleanup'
         })
     }
+}
+
+export const initCurrentProduct = (id) => {
+        return async dispatch => {
+            let payload = await getProduct(id);
+            dispatch({
+                type: 'Current_Product',
+                data: payload
+            })
+        }
 }
 
 

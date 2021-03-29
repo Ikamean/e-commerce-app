@@ -21,7 +21,10 @@ imagesRouter.get('/:id', async ( req, res) => {
     try {
         const id = req.params.id;
 
+
         const document = await Upload.findOne({ _id : id });
+
+        
 
         res.status(200).json(document);
 

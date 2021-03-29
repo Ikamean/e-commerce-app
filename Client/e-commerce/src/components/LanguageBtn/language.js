@@ -20,10 +20,17 @@ const Language = () => {
     return (
         <LanguageContainer>
             <LanguageBtn onClick={()=>changeLanguage('en')}>
-            EN
+            <img
+            alt="EN"
+            src="http://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg" 
+            height='15px' width='15px'  />
             </LanguageBtn>
 
-            <LanguageBtn onClick={()=>changeLanguage('ge')}>GE</LanguageBtn>
+            <LanguageBtn onClick={()=>changeLanguage('ge')}>
+            <img
+            alt="GE"
+            src="http://purecatamphetamine.github.io/country-flag-icons/3x2/GE.svg" 
+            height='15px' width='15px'  /></LanguageBtn>
         </LanguageContainer>
     )
 }
@@ -35,10 +42,10 @@ const LanguageContainer = styled.div`
     top:0;
     right: 15px;
     display: flex;
-    gap: 3px;
+    gap: 5px;
+    margin-top: 5px;
     
-    border-bottom: 1px solid ${ props => props.theme.colors.blue};
-    border-right: 1px solid ${ props => props.theme.colors.blue};
+    
 `
 const LanguageBtn = styled.button`
     border: none;
@@ -46,8 +53,7 @@ const LanguageBtn = styled.button`
     cursor: pointer;
     color: ${ props => props.theme.colors.blue};
     background-color: ${ props => props.theme.colors.white};
-    
+    border-bottom: 1px solid ${ props => props.theme.colors.black};
     font-weight: 600;
     font-size: 14px;
-    border-left: 1px solid ${ props => props.theme.colors.blue};
 `

@@ -19,7 +19,7 @@ import { VscChromeClose } from 'react-icons/vsc';
 
 const Contact = ({ user }) => {
     const [ open, setOpen ] = useState(false);  
-    const { authorPicture, authorName, authorFacebook, authorEmail, authorNumber, id } = user;
+    const { authorPicture, authorName, authorFacebook, authorEmail, authorNumber } = user;
     
     const { t } = useTranslation();
 

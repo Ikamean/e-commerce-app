@@ -8,6 +8,7 @@ import AccountPage from './pages/accountPage/accountPage';
 import FormPage from './pages/UploadFormPage/FormPage';
 import CategoryPage from './pages/categoryPage/categoryPage';
 import UserMarketPage from './pages/userMarketPage/userMarketPage';
+import ProductPage from './pages/productPage/productPage';
 
 import Navbar from './components/navbar/navbar';
 import Footer from './components/Footer/footer';
@@ -39,6 +40,10 @@ const App = () => {
 
             <Route path ='/market/:user' >
                 <UserMarketPage />
+            </Route>
+
+            <Route exact path='/product/:id'>
+                <ProductPage />
             </Route>
 
         </Switch>

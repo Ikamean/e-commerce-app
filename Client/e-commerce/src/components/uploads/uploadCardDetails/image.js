@@ -5,13 +5,19 @@ import { useHistory } from 'react-router-dom';
 
 import {Image,  Transformation} from 'cloudinary-react';
 
+import { initCurrentProduct } from '../../../redux/reducers/images';
+import { useDispatch } from 'react-redux';
+
 const UploadImages = ({ images, contentId }) => {
     const [ primaryImage, setPrimaryImage ] = useState(images[0]);
     const history = useHistory();
+    const dispatch = useDispatch();
 
-    const handleClick = () => {
+    const handleClick = async () => {
         console.log(primaryImage);
         console.log(contentId);
+        await dispatch(initCurrentProduct(contentId))
+        history.push(`/product/${contentId}`);
     }
     
     return (

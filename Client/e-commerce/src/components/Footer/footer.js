@@ -43,7 +43,10 @@ const FooterContainer = styled.div`
     align-items: flex-start;
     gap: 10px;
     padding: 2rem 2rem 1rem 2rem;
-    
+    position: static;
+    left: 0;
+    right: 0;
+    bottom: 0;
 `
 const AllRights = styled.div`
     color: ${ props => props.theme.colors.black };

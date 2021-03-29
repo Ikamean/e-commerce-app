@@ -106,7 +106,7 @@ section {
 html,
 body {
   font-size: 15px;
-  height: 100vh;
+  min-height: 100vh;
   line-height: 1.46668;
   font-weight: 400;
   font-family: "Roboto", sans-serif;

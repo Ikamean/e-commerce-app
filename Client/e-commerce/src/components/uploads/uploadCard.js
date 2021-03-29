@@ -7,7 +7,6 @@ import UploadCategory from './uploadCardDetails/category';
 import UploadPrice from './uploadCardDetails/price';
 import UploadImages from './uploadCardDetails/image';
 import CreationDate from './uploadCardDetails/creationDate';
-import Contact from './uploadCardDetails/ContactUser/contact';
 import ContentTopSection from './uploadCardDetails/contentTopSection';
 
 import { HorizontalAlign } from '../uploadForm/uploadForm';
