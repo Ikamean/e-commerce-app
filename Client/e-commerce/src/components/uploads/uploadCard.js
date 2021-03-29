@@ -99,9 +99,10 @@ export const DetailsHeader = styled.div`
     border:none;
     cursor: ${ props => props.contact && 'pointer'};
     padding: 5px;
-    &:hover{
-        outline: ${ props =>  props.contact && `1px solid ${ props.theme.colors.blue }`};
+    &:hover, &:active, &:focus{
+        color: ${ props => props.theme.colors.black };
     };
+    
     
 `
 
