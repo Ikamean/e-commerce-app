@@ -57,7 +57,7 @@ const ContactSeller = styled.span`
     font-weight: 600;
     cursor: pointer;
     width: auto;
-    font-size: 16px;
+    font-size: 12px;
     color: ${ props => props.theme.colors.blue };
     &:hover{
         color: ${ props => props.theme.colors.black }
@@ -70,6 +70,7 @@ const SellerBox = styled.div`
     font-weight: 600;
     font-size: 14px;
     top:0;
+    left: 0;
     z-index: 2;
     padding-left: 5px;
     width: 200px;

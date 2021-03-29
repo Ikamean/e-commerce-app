@@ -8,7 +8,7 @@ import UploadPrice from './uploadCardDetails/price';
 import UploadImages from './uploadCardDetails/image';
 import CreationDate from './uploadCardDetails/creationDate';
 import Contact from './uploadCardDetails/ContactUser/contact';
-import DeleteBtn from './uploadCardDetails/deletebtn';
+import ContentTopSection from './uploadCardDetails/contentTopSection';
 
 import { HorizontalAlign } from '../uploadForm/uploadForm';
 
@@ -28,7 +28,7 @@ const UploadCard = ({ content }) => {
             
             <ContainerGap>
 
-                <DeleteBtn id={_id} user={content}/> 
+                <ContentTopSection id={_id} user={content}/> 
                 
                 <UploadCategory category={category} />
                 

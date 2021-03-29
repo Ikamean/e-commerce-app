@@ -19,7 +19,7 @@ import { useTranslation } from 'react-i18next';
 
 import Contact from './ContactUser/contact';
 
-const Deletebtn = ({id, user}) => {
+const ContentTopSection = ({id, user}) => {
     const [ deleteLoading, setDeleteLoading ] = useState(false);
     const [ open, setOpen ] = useState(false);
 
@@ -65,7 +65,7 @@ const Deletebtn = ({id, user}) => {
     return (
             <>
                 
-                <DeleteToggle >
+                <TopSectionContainer >
                     <Contact user={user} />
                     <OptionIcon onClick={ ()=> setOpen(!open)}> <HiDotsVertical /> </OptionIcon>
                     
@@ -85,15 +85,16 @@ const Deletebtn = ({id, user}) => {
 
                     }
 
-                </DeleteToggle>
+                </TopSectionContainer>
             
             
             </>  
     )
 }
 
-export default Deletebtn
-const DeleteToggle = styled.span`
+export default ContentTopSection
+
+const TopSectionContainer = styled.span`
     position: relative;
     font-size: 24px;
     display: flex;
@@ -101,6 +102,7 @@ const DeleteToggle = styled.span`
     justify-content: space-between;
     transition: all 0.5s ease;
     margin-top: 5px;
+    padding-left: 5px;
 `
 const OptionIcon = styled.span`
     cursor: pointer;
