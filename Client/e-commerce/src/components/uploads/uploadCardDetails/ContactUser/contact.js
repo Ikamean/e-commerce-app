@@ -15,6 +15,8 @@ import AuthorNumber from './authorNumber';
 import AuthorPicture from './authorPicture';
 import AuthorMarket from './authorMarket';
 
+import { VscChromeClose } from 'react-icons/vsc';
+
 const Contact = ({ user }) => {
     const [ open, setOpen ] = useState(false);  
     const { authorPicture, authorName, authorFacebook, authorEmail, authorNumber, id } = user;
@@ -22,20 +24,19 @@ const Contact = ({ user }) => {
     const { t } = useTranslation();
 
     return (
-        <DetailsContainer contact='contact'  >
-
-        
+        <PositionAbsolute>
             <DetailsHeader contact='contact' onClick={ ()=> setOpen(!open)}>
                 {t('Contact Seller')}
             </DetailsHeader>
             {   
-                open &&
+                open &&    
                 <DetailText contact='contact'>
                     <DetailsContainer contact='contact'>
 
                         <HorizontalAlign>
                             <AuthorPicture  picture={authorPicture}/>
                             <AuthorName name={authorName} />
+                            <CloseBtn onClick={ () => setOpen(!open)}> <VscChromeClose /> </CloseBtn>
                         </HorizontalAlign>
 
                         <FlexStart>
@@ -48,8 +49,7 @@ const Contact = ({ user }) => {
                     </DetailsContainer>
                 </DetailText>
             }
-
-        </DetailsContainer>
+        </PositionAbsolute>
     )
 }
 
@@ -61,4 +61,16 @@ const FlexStart = styled.div`
     gap: 5px;
     justify-content: flex-start;
     align-items: flex-start;
+`
+const PositionAbsolute = styled.div`
+    position: absolute;
+    left:0;
+    top: 2%;
+`
+const CloseBtn = styled.span`
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 16px;
+    cursor: pointer;
 `

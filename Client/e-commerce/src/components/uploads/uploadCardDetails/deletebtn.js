@@ -63,8 +63,8 @@ const Deletebtn = ({id}) => {
     return (
             <>
 
-                <DeleteToggle onClick={ ()=> setOpen(!open)}>
-                    <HiDotsVertical />
+                <DeleteToggle >
+                    <OptionIcon onClick={ ()=> setOpen(!open)}> <HiDotsVertical /> </OptionIcon>
                 
 
                     {
@@ -94,10 +94,16 @@ const DeleteToggle = styled.span`
     position: relative;
     font-size: 24px;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
-    cursor: pointer;
     transition: all 0.5s ease;
+    margin-top: 5px;
 `
+const OptionIcon = styled.span`
+    cursor: pointer;
+    
+`
+
 const DeleteButton = styled.button`
     position: absolute;
     z-index: 10;
@@ -107,10 +113,10 @@ const DeleteButton = styled.button`
     outline: none;
     background-color: transparent;
     color: ${ props => props.theme.colors.black };
-    opacity: 70%;
     background-color: ${ props => props.theme.colors.white };
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding:0.5rem 3rem;
+    padding:0.5rem 2.2rem;
+    width: 176px;
     font-size: 12px;
     border-radius: 4px;
     cursor: pointer;
@@ -119,7 +125,6 @@ const DeleteButton = styled.button`
     &:hover{
         color: ${ props => props.theme.colors.white };
         background-color: ${ props => props.theme.colors.blue };
-        opacity: 1;
     }
     transition: all 0.5s ease;
 `

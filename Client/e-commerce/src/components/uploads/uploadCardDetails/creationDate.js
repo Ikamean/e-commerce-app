@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { DetailsHeader, DetailsContainer, DetailText } from '../uploadCard';
+import {  DetailsContainer, DetailText } from '../uploadCard';
 
-import { useTranslation } from 'react-i18next';
 
 const CreationDate = ({ date }) => {
-    const { t } = useTranslation();
+    
 
     const dateArray = date.split(' ');
     
@@ -20,11 +19,6 @@ const CreationDate = ({ date }) => {
     return (
         
         <DetailsContainer>
-
-
-                <DetailsHeader created='created'>
-                {t('Created')} : 
-                </DetailsHeader>
 
             <DateContainer>
 

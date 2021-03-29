@@ -26,7 +26,7 @@ const Footer = () => {
 
             </SocialMediaContainer>
             <AllRights>
-                {t('Rights')}
+               <span> {t('Rights')} </span> 
             </AllRights>
         </FooterContainer>
     )
@@ -39,36 +39,44 @@ const FooterContainer = styled.div`
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: space-around;
+    align-items: flex-start;
     gap: 10px;
     padding: 2rem 2rem 1rem 2rem;
     
 `
-const AllRights = styled.span`
-    color: ${ props => props.theme.colors.blac };
+const AllRights = styled.div`
+    color: ${ props => props.theme.colors.black };
     opacity: 0.8;
     font-size: 15px;
     font-weight: 600;
+    display: flex;
+    gap: 5px;
     @media(max-width: 360px){
         font-size: 12px;
     }
 `
+const Ikamean = styled.span`
+    color: ${ props => props.theme.colors.blue };
+`
 const SocialMediaContainer = styled.div`
     display: flex;
-    gap: 10px;
+    gap: 5px;
 `
 const SocialMedia = styled.a`
     border: none;
     outline: none;
-    padding: 8px;
+    
     border-radius: 4px;
     font-size: 18px;
     cursor: pointer;
     text-align: center;
-    background-color: ${ props => props.theme.colors.black };
-    color: ${ props => props.theme.colors.white };
+    
+    color: ${ props => props.theme.colors.black };
     &:hover{
         color: ${ props => props.theme.colors.blue };
+    };
+    @media(min-width: 650px){
+        font-size: 24px;
     }
 `

@@ -22,10 +22,9 @@ const MarketHeaderContainer = styled.div`
     font-size: 20px;
     font-weight: 600;
     gap: 20px;
-    margin-top: 50px;
     background-color: ${ props => props.theme.colors.black};
     color: ${ props => props.theme.colors.white };
-    padding: 1rem;
+    padding: 2rem;
     letter-spacing: 3px;
     @media(min-width: 650px){
         font-size: 28px;

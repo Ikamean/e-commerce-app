@@ -3,7 +3,7 @@
   "Category": {
     "Rock Climbing" : "კლდეზე ცოცვა",
     "Mountaineering" : "ალპინიზმი",
-    "Skiing" : "სრიალი"
+    "Skiing" : "თხილამური"
   },
   "Price": "ფასი",
   "Created": "თარიღი",
@@ -19,5 +19,5 @@
   "Number" : "ნომერი",
   "Details" : "პროდუქტის აღწერა",
   "Preview" : "დათვალიერება",
-  "Rights": "ყველა უფლება დაცულია 2021 Ikamean"
+  "Rights": "ყველა უფლება დაცულია 2021"
 }

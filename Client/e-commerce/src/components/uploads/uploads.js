@@ -43,7 +43,14 @@ const UploadsContainer = styled.div`
     background-color: ${ props => props.theme.colors.white };
     @media( min-width: 850px){
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        
+        grid-template-columns: 1fr 1fr  ;
+    };
+    @media( min-width: 1024px){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    };
+    @media( min-width: 1600px){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 `
