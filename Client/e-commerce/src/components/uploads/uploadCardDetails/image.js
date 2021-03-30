@@ -14,8 +14,6 @@ const UploadImages = ({ images, contentId }) => {
     const dispatch = useDispatch();
 
     const handleClick = async () => {
-        console.log(primaryImage);
-        console.log(contentId);
         await dispatch(initCurrentProduct(contentId))
         history.push(`/product/${contentId}`);
     }

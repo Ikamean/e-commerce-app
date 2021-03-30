@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 import { HorizontalAlign } from '../../../uploadForm/uploadForm';
 
-import { DetailsHeader, DetailsContainer, DetailText } from '../../uploadCard';
-
 import { useTranslation } from 'react-i18next';
 
 import AuthorEmail from './authorEmail';

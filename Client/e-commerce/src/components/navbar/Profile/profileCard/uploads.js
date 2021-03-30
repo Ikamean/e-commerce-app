@@ -18,7 +18,7 @@ export default Uploads
 
 const UploadsContainer = styled.div`
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;

@@ -29,7 +29,6 @@ const ProductPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    console.log(product);
 
     if(!product){
         return <Centered> <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /> </Centered>

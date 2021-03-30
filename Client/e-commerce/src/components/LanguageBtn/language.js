@@ -22,14 +22,14 @@ const Language = () => {
             <LanguageBtn onClick={()=>changeLanguage('en')}>
             <img
             alt="EN"
-            src="http://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg" 
+            src="https://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg" 
             height='15px' width='15px'  />
             </LanguageBtn>
 
             <LanguageBtn onClick={()=>changeLanguage('ge')}>
             <img
             alt="GE"
-            src="http://purecatamphetamine.github.io/country-flag-icons/3x2/GE.svg" 
+            src="https://purecatamphetamine.github.io/country-flag-icons/3x2/GE.svg" 
             height='15px' width='15px'  /></LanguageBtn>
         </LanguageContainer>
     )

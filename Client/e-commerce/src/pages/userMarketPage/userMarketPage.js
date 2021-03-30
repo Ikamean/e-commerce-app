@@ -19,7 +19,7 @@ const UserMarketPage = () => {
     const dispatch = useDispatch();
 
     const authorEmail = useLocation().pathname.split('/')[2]
-    console.log(market[0]);
+    
     
     const initializeAfterReload = async () => {
         await dispatch(initMarket(authorEmail));

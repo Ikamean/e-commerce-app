@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { useTranslation } from 'react-i18next';
-import { Horizontal } from './product';
 import ProductPrice from './productPrice';
 import CreationDate from './productDate';
 

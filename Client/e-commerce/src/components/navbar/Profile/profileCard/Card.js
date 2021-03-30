@@ -52,11 +52,11 @@ const CardContainer = styled.div`
     justify-content: space-between;
     position: absolute;
     z-index: 3;
-    right: 0px;
+    right: -5%;
     top: 69px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    width: 252px;
+    width: 300px;
     height: 232px;
     background-color: ${ props => props.theme.colors.white };
 
@@ -71,9 +71,9 @@ const FirstSection = styled.div`
 const AccountInformation = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: space-between;
-    
+    width: 200px;
 `
 
 const SecondSection = styled.div`

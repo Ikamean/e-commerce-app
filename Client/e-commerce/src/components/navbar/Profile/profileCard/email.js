@@ -13,14 +13,14 @@ export default Email
 
 export const EmailContainer = styled.div`
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     font-style: normal;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 28px;
     letter-spacing: 0.13em;
     color: ${ props => props.theme.colors.black };
-    opacity: 76%;
     margin-right: 13px;
     margin-top: 5px;
+    width: auto;
 `

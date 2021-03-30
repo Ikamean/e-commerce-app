@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { ImPriceTag } from 'react-icons/im';
-import { Horizontal } from './product';
 
 const ProductPrice = ({ price }) => {
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {  DetailsContainer, DetailText } from '../uploads/uploadCard';
+import {  DetailsContainer  } from '../uploads/uploadCard';
 
 import { FcCalendar } from 'react-icons/fc';
 import { HorizontalBox } from './productPrice';

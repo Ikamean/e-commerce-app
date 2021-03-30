@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import {Image,  Transformation} from 'cloudinary-react';
+import { Image } from 'cloudinary-react';
 
 
 
 const ProductMedia = ({ media }) => {
     const [ primaryImage, setPrimaryImage ] = useState(media[0]);
-    console.log(primaryImage);
+    
 
     return (
         <MediaContainer>
@@ -62,7 +62,6 @@ const PrimaryImageBox = styled.div`
 const MediaSlider = styled.div`
     display: flex;
     width: 304px;
-    
     justify-content: flex-start;
     align-items: center;
     gap: 50px;

@@ -59,9 +59,6 @@ const AllRights = styled.div`
         font-size: 12px;
     }
 `
-const Ikamean = styled.span`
-    color: ${ props => props.theme.colors.blue };
-`
 const SocialMediaContainer = styled.div`
     display: flex;
     gap: 5px;
