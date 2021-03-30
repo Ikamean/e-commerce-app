@@ -6,21 +6,25 @@ import { Horizontal } from './product';
 
 const ProductPrice = ({ price }) => {
     return (
-        <Horizontal>
+        <HorizontalBox>
             <PriceIcon>
                 <ImPriceTag />
             </PriceIcon>
             {price} GEL
-        </Horizontal>
+        </HorizontalBox>
     )
 }
 
 export default ProductPrice
 
-
+export const HorizontalBox = styled.div`
+    display: flex;
+    gap: 5px;
+`
 const PriceIcon = styled.span`
     display: flex;
     align-items: center;
     color: ${ props => props.theme.colors.blue } ;
     margin-right: 5px;
 `
+

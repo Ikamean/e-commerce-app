@@ -2,22 +2,34 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { useTranslation } from 'react-i18next';
+import { Horizontal } from './product';
+import ProductPrice from './productPrice';
+import CreationDate from './productDate';
 
 
-const ProductDetails = ({ text }) => {
+const ProductDetails = ({ product }) => {
     const { t } = useTranslation();
 
     return (
+        
+        
         <DetailBox>
+
+                <HorizontalBoxContainer>
+                    <ProductPrice price={product.price} />
+                    <CreationDate date={product.creationDate} />
+                </HorizontalBoxContainer>
+                
         <DetailsHeader>
             {t('Product Details')}
         </DetailsHeader>
 
         <TextBox>
-            {text}
+            {product.details}
         </TextBox>
 
         </DetailBox>
+      
     )
 }
 
@@ -34,6 +46,12 @@ const DetailBox = styled.div`
     @media(min-width: 650px){
         justify-content: flex-start;
     }
+`
+const HorizontalBoxContainer = styled.div`
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
 `
 
 const DetailsHeader = styled.h3`

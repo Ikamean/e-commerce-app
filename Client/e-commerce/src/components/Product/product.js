@@ -3,9 +3,7 @@ import styled from 'styled-components';
 
 
 import ProductMedia from './productMedia';
-import ProductPrice from './productPrice';
 import ProductCategory from './productCategory';
-import CreationDate from './productDate';
 import ProductDetails from './productDetails';
 import ProductAuthor from './productAuthor';
 
@@ -17,14 +15,9 @@ const Product = ({ product }) => {
                 <ProductCategory category={product.category} />
 
                 
-                <Horizontal>
-                    <ProductPrice price={product.price} />
-                    <CreationDate date={product.creationDate} />
-                </Horizontal>
-                
                 <ProductContentHorizontalBox>
                     <ProductMedia media={product.image} />
-                    <ProductDetails text={product.details} />
+                    <ProductDetails product={product} />
                 </ProductContentHorizontalBox>
 
                 <ProductAuthor author={product} />
@@ -45,11 +38,12 @@ const ProductContainer = styled.div`
 
 export const Horizontal = styled.div`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     font-size: 14px;
     font-weight: 600;
     padding-top: 2px;
+    
 `
 const ProductContentHorizontalBox = styled.div`
     display: flex;
