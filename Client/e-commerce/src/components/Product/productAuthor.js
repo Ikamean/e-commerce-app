@@ -87,7 +87,7 @@ const ContactBox = styled.div`
     font-size: 14px;
     gap: 5px;
     @media(min-width: 650px){
-        font-size: 18px;
+        font-size: 16px;
     }
 `
 const ContactField = styled.div`

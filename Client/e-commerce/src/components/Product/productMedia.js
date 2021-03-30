@@ -54,14 +54,15 @@ const PrimaryImageBox = styled.div`
     align-items: center;
     @media(min-width: 650px){
         width: 400px;
-        height: 500px;
-        min-height: 500px;
-        max-height: 500px;
+        height: 600px;
+        min-height: 600px;
+        max-height: 600px;
     }
 `
 const MediaSlider = styled.div`
     display: flex;
     width: 304px;
+    
     justify-content: flex-start;
     align-items: center;
     gap: 50px;
@@ -69,10 +70,16 @@ const MediaSlider = styled.div`
     padding: 1rem 0;
     @media(min-width: 650px){
         width: 400px;
-
     }
 
 `
 const SecondaryImageBox = styled.div`
     width: 50px;
+    height: 140px;
+    min-height:140px;
+    max-height: 140px;
+    cursor: pointer;
+    &:hover{
+        opacity: 0.8;
+    }
 `
