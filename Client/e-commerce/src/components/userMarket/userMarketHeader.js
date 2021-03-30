@@ -2,13 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { GiShop } from 'react-icons/gi';
+import { useTranslation } from 'react-i18next';
 
 const MarketHeader = ({ name }) => {
     const firstName = name.split(' ')[0];
+    const { t } = useTranslation();
 
     return (
         <MarketHeaderContainer>
-            <ShopIcon> <GiShop /> </ShopIcon>  {firstName}'s Market
+            <ShopIcon> <GiShop /> </ShopIcon>  {firstName}'s {t('Market')}
         </MarketHeaderContainer>
     )
 }

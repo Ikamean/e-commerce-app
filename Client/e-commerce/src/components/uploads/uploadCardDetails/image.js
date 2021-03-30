@@ -25,9 +25,9 @@ const UploadImages = ({ images, contentId }) => {
         <UploadedImagesContainer>
             <PrimaryImageContainer onClick={()=> handleClick()}>
             
-                <Image   publicId={primaryImage} cloudName='ikameancloud'>
+                <Image loading='lazy'  publicId={primaryImage} cloudName='ikameancloud'>
                     <Transformation 
-                    quality="70" width="150" drp='auto' fetchFormat="auto" crop="scale"
+                    quality="70" width="150" crop="scale"
                         />
 
                 </Image>
@@ -39,8 +39,8 @@ const UploadImages = ({ images, contentId }) => {
 
                 <ClickerDiv key={index} onClick={ () => setPrimaryImage(image)} >
 
-                    <Image   publicId={image} cloudName='ikameancloud' >
-                        <Transformation quality="70" fetchFormat="auto"  
+                    <Image loading='lazy'   publicId={image} cloudName='ikameancloud' >
+                        <Transformation quality="70"  
                             width='50' crop="fill"  radius="10" />
                     </Image> 
 
@@ -70,6 +70,10 @@ const PrimaryImageContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    &:hover{
+        opacity: 0.8;
+    }
 `
 const ImageSlider = styled.div`
     display: flex;

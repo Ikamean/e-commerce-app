@@ -47,11 +47,10 @@ export default Navbar
 
 const NavbarContainer = styled.div`
     display: flex;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     justify-content: space-between;
     align-items: center;
     padding: 2rem 1rem 1rem 1rem ;
-    background-color: ${ props=> props.theme.colors.white };
+    background-color: ${ props=> props.theme.colors.black };
     color: ${ props=> props.theme.colors.black };
     position: sticky; 
     top: 0;

@@ -3,13 +3,12 @@ import styled from 'styled-components';
 
 
 import UploadCategory from './uploadCardDetails/category';
-
-import UploadPrice from './uploadCardDetails/price';
 import UploadImages from './uploadCardDetails/image';
-import CreationDate from './uploadCardDetails/creationDate';
 import ContentTopSection from './uploadCardDetails/contentTopSection';
 
-import { HorizontalAlign } from '../uploadForm/uploadForm';
+import CreationDate from '../Product/productDate';
+import ProductPrice from '../Product/productPrice';
+import { Horizontal } from '../Product/product';
 
 
 const UploadCard = ({ content }) => {
@@ -32,10 +31,10 @@ const UploadCard = ({ content }) => {
                 <UploadCategory category={category} />
                 
 
-                <HorizontalAlign>
-                    <UploadPrice price={price} />
+                <Horizontal>
+                    <ProductPrice price={price} />
                     <CreationDate date={creationDate} />
-                </HorizontalAlign>
+                </Horizontal>
 
                 <UploadImages images={image} contentId = {_id} />
 

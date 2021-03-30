@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {  DetailsContainer, DetailText } from '../uploadCard';
+import {  DetailsContainer, DetailText } from '../uploads/uploadCard';
+
+import { FcCalendar } from 'react-icons/fc';
+import { Horizontal } from './product';
 
 
 const CreationDate = ({ date }) => {
@@ -22,9 +25,13 @@ const CreationDate = ({ date }) => {
 
             <DateContainer>
 
-                <DetailText created='created'>
+                <Horizontal >
+                    <CalendarIcon>
+                        <FcCalendar />
+                    </CalendarIcon>
+                    
                     {primaryDate}
-                </DetailText>
+                </Horizontal>
 
                 <HoverableSecondaryDate>
                     {secondaryDate}
@@ -59,4 +66,11 @@ const DateContainer = styled.div`
         display: flex;
         
     }
+`
+const CalendarIcon = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 5px;
 `

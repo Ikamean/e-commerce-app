@@ -29,12 +29,11 @@ const HeaderContainer = styled.h1`
     font-size: 16px;
     line-height: 28px;
     letter-spacing: 1px;
-    color: ${ props=> props.theme.colors.blue };
-    opacity: 1;
+    color: ${ props=> props.theme.colors.white };
+    
     cursor: pointer;
-    &:hover, :focus{
-        opacity: 0.8;
-        font-weight: 600;
+    &:hover, :focus,:active{
+        color: ${ props=> props.theme.colors.blue };
     }
 
     @media(min-width: 650px){

@@ -23,16 +23,15 @@ const ProductPage = () => {
     }
 
     useEffect(() => {
-        if(!product){
+        
             initializeCurrentProduct();
-        }
-        console.log(product);
+        
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     console.log(product);
 
-    if(true){
+    if(!product){
         return <Centered> <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /> </Centered>
     }
 

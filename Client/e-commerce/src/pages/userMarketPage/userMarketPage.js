@@ -12,22 +12,23 @@ import { useLocation } from 'react-router-dom';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import { Centered } from '../accountPage/accountPage';
+import ProductAuthor from '../../components/Product/productAuthor';
 
 const UserMarketPage = () => {
     const market = useSelector( state => state.market.market);
     const dispatch = useDispatch();
 
     const authorEmail = useLocation().pathname.split('/')[2]
-    
+    console.log(market[0]);
     
     const initializeAfterReload = async () => {
         await dispatch(initMarket(authorEmail));
     }
 
     useEffect(() => {
-        if(market.length === 0){
+        
             initializeAfterReload();
-        }
+        
         
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
@@ -41,6 +42,7 @@ const UserMarketPage = () => {
         <>
         <MarketHeader name={market[0].authorName} />
         <Uploads uploads={market} />
+        <ProductAuthor author={market[0]} />
         </>
     )
 }

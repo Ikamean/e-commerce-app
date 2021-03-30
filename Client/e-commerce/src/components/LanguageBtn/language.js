@@ -52,8 +52,8 @@ const LanguageBtn = styled.button`
     outline: none;
     cursor: pointer;
     color: ${ props => props.theme.colors.blue};
-    background-color: ${ props => props.theme.colors.white};
-    border-bottom: 1px solid ${ props => props.theme.colors.black};
+    background-color: ${ props => props.theme.colors.blue};
+    border-radius: 2px;
     font-weight: 600;
     font-size: 14px;
 `

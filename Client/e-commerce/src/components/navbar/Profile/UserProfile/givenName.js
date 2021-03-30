@@ -35,11 +35,10 @@ const AvatarContainer = styled.div`
     font-size: 16px;
     line-height: 28px;
     letter-spacing: 0.25em;
-    color: ${ props => props.theme.colors.black};
+    color: ${ props => props.theme.colors.white};
     font-weight: 600;
-    &:hover{
-        
-        opacity: 0.8;
+    &:hover,:focus,:active{
+        color: ${ props => props.theme.colors.blue };
     }
     @media(max-width: 360px){
         font-size: 12px;
